@@ -18,12 +18,12 @@
               <li><a href="index.php">Visão Geral</a></li>
               <li class="#"><a href="#">Cadastrar</a>
                 <ul class="uk-nav-sub">
-                  <li><a href="cadastraraluno.php">Aluno</a></li>
-                  <li><a href="cadastrarprofessor.php">Professor</a></li>
-                  <li><a href="cadastrarcurso.php">Curso</a></li>
+                  <li><a href="<?php echo BASEURL; ?>aluno/add.php">Aluno</a></li>
+                  <li><a href="<?php echo BASEURL; ?>professor/add.php">Professor</a></li>
+                  <li><a href="<?php echo BASEURL; ?>curso/add.php">Curso</a></li>
                 </ul>
               </li>
-              <li><a href="relatorio.php">Relatório</a></li>
+              <li><a href="<?php echo BASEURL; ?>relatorio/relatorio.php">Relatório</a></li>
             </ul>
           </div>
         </div>

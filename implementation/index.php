@@ -1,5 +1,8 @@
-<?php include "includes/header.php";?>
-<?php require_once('config.php'); ?>
+<?php require_once 'config.php'; ?>
+<?php include "inc/header.php"; ?>
+<?php require_once DBAPI; ?>
+<?php $db = open_database(); ?>
+
   <!-- Seção de Conteúdo -->
   <div class="uk-container">
     <div class="row">
@@ -13,13 +16,13 @@
                   <div class="content-body">
                     <div class="row">
                       <header class="panel_header">
-                          <a href="cadastraraluno.php"><h2 class="title pull-left uk-heading-bullet">Alunos</h2></a>
+                          <a href="<?php echo BASEURL; ?>aluno"><h2 class="title pull-left uk-heading-bullet">Alunos</h2></a>
                       </header>
                       <header class="panel_header">
-                          <a href="cadastrarprofessor.php"><h2 class="title pull-left uk-heading-bullet">Professores</h2></a>
+                          <a href="<?php echo BASEURL; ?>professor"><h2 class="title pull-left uk-heading-bullet">Professores</h2></a>
                       </header>
                       <header class="panel_header">
-                          <a href="cadastrarcurso.php"><h2 class="title pull-left uk-heading-bullet">Cursos</h2></a>
+                          <a href="<?php echo BASEURL; ?>curso"><h2 class="title pull-left uk-heading-bullet">Cursos</h2></a>
                       </header>
                     </div>
                   </div>
@@ -29,4 +32,4 @@
       </div>
     </div>
   </div>
-<?php include "includes/footer.php";?>
+<?php include "inc/footer.php";?>
