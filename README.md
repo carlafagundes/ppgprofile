@@ -14,3 +14,4 @@ Este repositório está organizado do seguinte modo:
 # Alunas:
  - Edicarla Silva
  - Monira Silva
+ - Rafael Sandes
