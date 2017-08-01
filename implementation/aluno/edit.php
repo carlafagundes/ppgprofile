@@ -65,6 +65,45 @@
                         </div>
                       </div>
                       <header class="panel_header">
+                        <h2 class="title pull-left uk-heading-bullet">Endereço</h2>
+                      </header>
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">CEP</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="number" name="customer['cep']" value="<?php echo $customer['cep']; ?>">
+                          </div>
+                        </div>
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">UF</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['uf']" value="<?php echo $customer['uf']; ?>">
+                          </div>
+                        </div>                        
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">Cidade</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['cidade']" value="<?php echo $customer['cidade']; ?>">
+                          </div>
+                        </div>
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">Bairro</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['bairro']" value="<?php echo $customer['bairro']; ?>">
+                          </div>
+                        </div>
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">Rua</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['rua']" value="<?php echo $customer['rua']; ?>">
+                          </div>
+                        </div>                            
+                        <div class="uk-width-1-3@s">
+                          <label class="uk-form-label" for="form-stacked-text">N°</label>
+                          <div class="uk-form-controls">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['n_endereco']" value="<?php echo $customer['n_endereco']; ?>">
+                          </div>
+                        </div>
+                      <header class="panel_header">
                           <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Graduação</h2>
                       </header>
                       <div class="uk-width-1-3@s">
@@ -87,7 +126,7 @@
                         <div class="uk-form-controls">
                             <input class="uk-input" id="form-stacked-text" type="number" name="customer['ano_concl']" value="<?php echo $customer['ano_concl']; ?>">
                         </div>
-                      </div>
+                      </div>                     
                       <header class="panel_header">
                           <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Pós-Graduação</h2>
                       </header>
