@@ -40,7 +40,7 @@
                       <div class="uk-width-1-3@s">
                         <label class="uk-form-label" for="form-stacked-text">SIAPE</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="text" name="siape">
+                            <input class="uk-input" id="form-stacked-text" type="text" name="customer['siape']">
                         </div>
                       </div>
                       <header class="panel_header">
@@ -49,13 +49,13 @@
                       <div class="uk-width-1-2@s">
                         <label class="uk-form-label" for="form-stacked-text">E-mail</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="email" name="email">
+                            <input class="uk-input" id="form-stacked-text" type="email" name="customer['email']">
                         </div>
                       </div>
                       <div class="uk-width-1-2@s">
                         <label class="uk-form-label" for="form-stacked-text">Senha</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="password" name="senha">
+                            <input class="uk-input" id="form-stacked-text" type="password" name="customer['senha']">
                         </div>
                       </div>
                       <div id="actions" class="cadastrar">
