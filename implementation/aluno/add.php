@@ -38,12 +38,12 @@
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
-                        <div class="uk-form-label">Gênero</div>
+                        <div class="uk-form-label">Gênero</div>                                              
                         <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select">
+                            <select class="uk-select" id="form-stacked-select" name="customer['genero']">
                                 <option>Feminino</option>
                                 <option>Masculino</option>
-                            </select>
+                            </select>                            
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
@@ -70,7 +70,7 @@
                       <div class="uk-width-1-3@s">
                         <div class="uk-form-label">Curso</div>
                         <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select">
+                            <select class="uk-select" id="form-stacked-select" name="customer['curso']">
                                 <option>Curso A da UFBA</option>
                                 <option>Curso A da Unifacs</option>
                             </select>
@@ -79,13 +79,13 @@
                       <div class="uk-width-1-3@s">
                         <label class="uk-form-label" for="form-stacked-text">CR</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="number">
+                            <input class="uk-input" id="form-stacked-text" type="number" name="customer['cr']">
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
                         <label class="uk-form-label" for="form-stacked-text">Ano de Conclusão</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="number">
+                            <input class="uk-input" id="form-stacked-text" type="number" name="customer['ano_concl']">
                         </div>
                       </div>
                       <header class="panel_header">
@@ -94,19 +94,19 @@
                       <div class="uk-width-1-2@s">
                         <label class="uk-form-label" for="form-stacked-text">Área de Conhecimento</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="text">
+                            <input class="uk-input" id="form-stacked-text" type="text" name="customer['area_conhecimento']">
                         </div>
                       </div>
                       <div class="uk-width-1-2@s">
                         <label class="uk-form-label" for="form-stacked-text">Semestre de Ingresso</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="text">
+                            <input class="uk-input" id="form-stacked-text" type="text" name="customer['semestre_inc']">
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
                         <div class="uk-form-label">Orientador</div>
                         <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select">
+                            <select class="uk-select" id="form-stacked-select" name="customer['orientador']">
                                 <option value="">Selecione um orientador</option>
                                 <option value="1">Daniela Claro</option>
                                 <option value="2">Ivan Machado</option>
@@ -116,13 +116,13 @@
                       <div class="uk-width-1-3@s">
                         <label class="uk-form-label" for="form-stacked-text">Co-Orientador</label>
                         <div class="uk-form-controls">
-                            <input class="uk-input" id="form-stacked-text" type="text">
+                            <input class="uk-input" id="form-stacked-text" type="text" name="customer['co_orientador']">
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
                         <div class="uk-form-label">Nível</div>
                         <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select">
+                            <select class="uk-select" id="form-stacked-select" name="customer['nivel']">
                                 <option value="">Selecione um nível</option>
                                 <option value="1">Mestrado</option>
                                 <option value="2">Doutorado</option>
