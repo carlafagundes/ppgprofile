@@ -1,0 +1,62 @@
+CREATE DATABASE ppg_bd;
+
+CREATE TABLE curso (
+  id int(11) NOT NULL,
+  nome varchar(255) NOT NULL,
+  conceito_mec int(10) NOT NULL,
+  instituicao varchar(255) NOT NULL,
+  tipo varchar(255) NOT NULL,  
+  created datetime NOT NULL,
+  modified datetime NOT NULL
+);
+
+ALTER TABLE curso
+  ADD PRIMARY KEY (id);
+  
+ALTER TABLE curso
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+CREATE TABLE professor (
+  id int(11) NOT NULL,
+  pNome varchar(255) NOT NULL,
+  uNome varchar(255) NOT NULL,
+  siape int(10) NOT NULL,
+  email varchar(30) NOT NULL,
+  senha varchar(15) NOT NULL,  
+  created datetime NOT NULL,
+  modified datetime NOT NULL
+);
+
+ALTER TABLE professor
+  ADD PRIMARY KEY (id);
+  
+ALTER TABLE professor
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+
+CREATE TABLE aluno (
+  id int(11) NOT NULL,
+  pNome varchar(255) NOT NULL,
+  uNome varchar(255) NOT NULL,
+  genero varchar(10),  
+  cpf int(11) NOT NULL,
+  data_nasc date NOT NULL,
+  nacionalidade varchar(255) NOT NULL,
+  curso varchar(255) NOT NULL,
+  cr int(10) NOT NULL,
+  ano_concl date NOT NULL,
+  area_conhecimento varchar(100) NOT NULL,
+  semestre_inc varchar(100) NOT NULL,
+  nivel varchar(10) NOT NULL,
+  orientador varchar (255) NOT NULL,
+  co_orientador varchar (255) NOT NULL,  
+  created datetime NOT NULL,
+  modified datetime NOT NULL
+);
+
+ALTER TABLE aluno
+  ADD PRIMARY KEY (id);
+  
+ALTER TABLE aluno
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
