@@ -25,17 +25,23 @@
 											<div class="alert alert-<?php echo $_SESSION['type']; ?>"><?php echo $_SESSION['message']; ?></div>
 										<?php endif; ?>
                     <header class="panel_header">
-                        <h2 class="title pull-left uk-heading-bullet">Nome:<?php echo $customer['pNome']; ?></h2>
+                        <h2 class="title pull-left uk-heading-bullet">Nome: <?php echo $customer['pNome']; ?></h2>
                     </header>
 										<header class="panel_header">
-											<h2 class="title pull-left uk-heading-bullet">Sobrenome:<?php echo $customer['uNome']; ?></h2>
+											<h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['uNome']; ?></h2>
 										</header>
 										<header class="panel_header">
-											<h2 class="title pull-left uk-heading-bullet">SIAPE:<?php echo $customer['siape']; ?></h2>
+											<h2 class="title pull-left uk-heading-bullet">SIAPE: <?php echo $customer['siape']; ?></h2>
 										</header>
 										<header class="panel_header">
-											<h2 class="title pull-left uk-heading-bullet">Email:<?php echo $customer['email']; ?></h2>
+											<h2 class="title pull-left uk-heading-bullet">Email: <?php echo $customer['email']; ?></h2>
 										</header>
+                    <header class="panel_header">
+                      <h2 class="title pull-left uk-heading-bullet">Modificado em : <?php echo $customer['modified']; ?></h2>
+                    </header>
+                    <header class="panel_header">
+                      <h2 class="title pull-left uk-heading-bullet">Criado em : <?php echo $customer['created']; ?></h2>
+                    </header>
 										<a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar"><button class="uk-button uk-button-primary">Editar</button></a>
 										<a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
                 </div>
