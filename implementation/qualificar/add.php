@@ -26,13 +26,13 @@
                     </header>
                       <form action="add.php" method="post" class="uk-grid-small" uk-grid>
                         <div class="uk-width-1-3@s">
-                          <label class="uk-form-label" for="form-stacked-text">Matrícula</label>
+                          <label class="uk-form-label" for="form-stacked-text">Pesquisar por Matrícula</label>
                           <div class="uk-form-controls">
                               <input class="uk-input" id="form-stacked-text" type="text" name="customer['']">
                           </div>
                         </div>
                         <div class="uk-width-1-3@s">
-                          <div class="uk-form-label">Aluno</div>
+                          <div class="uk-form-label">Pesquisar Aluno</div>
                           <div class="uk-form-controls">
                               <select class="uk-select" id="form-stacked-select" name="customer['']">
                                   <option>Aluno 1</option>
@@ -83,13 +83,13 @@
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
-                        <label class="uk-form-label" for="form-stacked-text">Não sei o que é</label>
+                        <label class="uk-form-label" for="form-stacked-text">Pesquisar por SIAPE</label>
                         <div class="uk-form-controls">
                             <input class="uk-input" id="form-stacked-text" type="text" name="customer['']">
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
-                        <div class="uk-form-label">Professor</div>
+                        <div class="uk-form-label">Pesquisar Professor</div>
                         <div class="uk-form-controls">
                             <select class="uk-select" id="form-stacked-select" name="customer['']">
                                 <option>Ivan Machado</option>
