@@ -180,3 +180,9 @@ span.logo-interna{
 .cadastrar button{
   margin: 20px 0;
 }
+
+a.uk-align-right.senha {
+    padding-top: 20px;
+    color: #000;
+    margin-bottom: 0 !important;
+}
