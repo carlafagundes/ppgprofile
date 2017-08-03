@@ -41,8 +41,8 @@
                           <div class="uk-form-label">Gênero</div>                                              
                           <div class="uk-form-controls">
                               <select class="uk-select" id="form-stacked-select" type="text" name="customer['genero']">
-                                  <option>Feminino</option>
-                                  <option>Masculino</option>
+                                  <option value="feminino" >Feminino</option>
+                                  <option value="masculino" >Masculino</option>
                               </select>                            
                           </div>
                         </div>

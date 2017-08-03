@@ -62,3 +62,10 @@ function delete($id = null) {
   $customer = remove('aluno', $id);
   header('location: index.php');
 }
+
+/**
+ *  Selecionar data ja selecionado no banco Editform
+ */
+function selected( $value, $selected ){
+    return $value==$selected ? ' selected="selected"' : '';
+}
