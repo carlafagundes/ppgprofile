@@ -40,9 +40,9 @@
                         <div class="uk-width-1-3@s">
                           <div class="uk-form-label">Gênero</div>                                              
                           <div class="uk-form-controls">
-                              <select class="uk-select" id="form-stacked-select" name="customer['genero']">
-                                  <option>Feminino</option>
-                                  <option>Masculino</option>
+                              <select class="uk-select" id="form-stacked-select" type="text" name="customer['genero']">
+                                  <option value="feminino" >Feminino</option>
+                                  <option value="masculino" >Masculino</option>
                               </select>                            
                           </div>
                         </div>
@@ -75,8 +75,35 @@
                         </div>
                         <div class="uk-width-1-3@s">
                           <label class="uk-form-label" for="form-stacked-text">UF</label>
-                          <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['uf']">
+                          <div class="uk-form-controls">                              
+                              <select class="uk-select" id="form-stacked-select" type="text" name="customer['uf']">
+                                  <option value="AC">AC</option>
+                                  <option value="AL">AL</option>
+                                  <option value="AP">AP</option>
+                                  <option value="AM">AM</option>
+                                  <option value="BA">BA</option>
+                                  <option value="CE">CE</option>
+                                  <option value="ES">ES</option>
+                                  <option value="DF">DF</option>
+                                  <option value="MA">MA</option>
+                                  <option value="MT">MT</option>
+                                  <option value="MS">MS</option>
+                                  <option value="MG">MG</option>
+                                  <option value="PA">PA</option>
+                                  <option value="PB">PB</option>
+                                  <option value="PR">PR</option>
+                                  <option value="PE">PE</option>
+                                  <option value="PI">PI</option>
+                                  <option value="RJ">RJ</option>
+                                  <option value="RN">RN</option>
+                                  <option value="RS">RS</option>
+                                  <option value="RO">RO</option>
+                                  <option value="RR">RR</option>
+                                  <option value="SC">SC</option>
+                                  <option value="SP">SP</option>
+                                  <option value="SE">SE</option>
+                                  <option value="TO">TO</option>
+                              </select>   
                           </div>
                         </div>                        
                         <div class="uk-width-1-3@s">
