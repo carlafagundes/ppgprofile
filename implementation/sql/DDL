@@ -39,7 +39,7 @@ CREATE TABLE aluno (
   id int(11) NOT NULL,
   pNome varchar(255) NOT NULL,
   uNome varchar(255) NOT NULL,
-  genero varchar(10),  
+  sexo varchar(10),  
   cpf int(11) NOT NULL,
   data_nasc date NOT NULL,
   nacionalidade varchar(255) NOT NULL,
@@ -65,4 +65,22 @@ ALTER TABLE aluno
   ADD PRIMARY KEY (id);
   
 ALTER TABLE aluno
+  MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+  CREATE TABLE qualificacao(
+  id int(11) NOT NULL,
+  id_aluno int(11) NOT NULL,
+  data date NOT NULL,
+  status varchar (15),
+  nota int(10),
+  siape int(10) NOT NULL,
+  orientador varchar(30) NOT NULL,  
+  created datetime NOT NULL,
+  modified datetime NOT NULL
+);
+
+ALTER TABLE qualificacao
+  ADD PRIMARY KEY (id);
+  
+ALTER TABLE qualificacao
   MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;

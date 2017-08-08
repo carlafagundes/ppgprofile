@@ -31,7 +31,7 @@
 											<h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['uNome']; ?></h2>
 										</header>
                     <header class="panel_header">
-                      <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo $customer['genero']; ?></h2>
+                      <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo $customer['sexo']; ?></h2>
                     </header>
 										<header class="panel_header">
 											<h2 class="title pull-left uk-heading-bullet">CPF: <?php echo $customer['cpf']; ?></h2>

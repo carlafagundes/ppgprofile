@@ -38,9 +38,9 @@
                           </div>
                         </div>
                         <div class="uk-width-1-3@s">
-                          <div class="uk-form-label">Gênero</div>                                              
+                          <div class="uk-form-label">Sexo</div>                                              
                           <div class="uk-form-controls">
-                              <select class="uk-select" id="form-stacked-select" type="text" name="customer['genero']">
+                              <select class="uk-select" id="form-stacked-select" type="text" name="customer['sexo']">
                                   <option value="feminino" >Feminino</option>
                                   <option value="masculino" >Masculino</option>
                               </select>                            

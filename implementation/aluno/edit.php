@@ -38,11 +38,11 @@
                         </div>
                       </div>
                       <div class="uk-width-1-3@s">
-                        <div class="uk-form-label">Gênero</div>
+                        <div class="uk-form-label">Sexo</div>
                         <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select" name="customer['genero']" value="<?php echo $customer['genero']; ?>" >
-                                <option value="masculino"<?php echo selected( 'masculino', $customer['genero'] ); ?>>Masculino</option>
-                                <option value="feminino"<?php echo selected( 'feminino', $customer['genero'] ); ?>>Feminino</option>
+                            <select class="uk-select" id="form-stacked-select" name="customer['sexo']" value="<?php echo $customer['sexo']; ?>" >
+                                <option value="masculino"<?php echo selected( 'masculino', $customer['sexo'] ); ?>>Masculino</option>
+                                <option value="feminino"<?php echo selected( 'feminino', $customer['sexo'] ); ?>>Feminino</option>
                             </select>
                         </div>
                       </div>
