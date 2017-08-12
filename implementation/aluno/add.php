@@ -157,16 +157,26 @@
                       <header class="panel_header">
                           <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Pós-Graduação</h2>
                       </header>
-                        <div class="uk-width-1-2@s">
+                        <div class="uk-width-1-3@s">
                           <label class="uk-form-label" for="form-stacked-text">Área de Conhecimento</label>
                           <div class="uk-form-controls">
                               <input class="uk-input" id="form-stacked-text" type="text" name="customer['area_conhecimento']">
                           </div>
                         </div>
-                        <div class="uk-width-1-2@s">
+                        <div class="uk-width-1-3@s">
                           <label class="uk-form-label" for="form-stacked-text">Semestre de Ingresso</label>
                           <div class="uk-form-controls">
                               <input class="uk-input" id="form-stacked-text" type="text" name="customer['semestre_inc']">
+                          </div>
+                        </div>
+                        <div class="uk-width-1-3@s">
+                          <div class="uk-form-label">Dedicação</div>
+                          <div class="uk-form-controls">
+                              <select class="uk-select" id="form-stacked-select" name="customer['dedicacao']">
+                                  <option value="">Selecione a dedicação</option>
+                                  <option value="1">Exclusiva</option>
+                                  <option value="2">Parcial</option>
+                              </select>
                           </div>
                         </div>
                         <div class="uk-width-1-3@s">
@@ -180,9 +190,13 @@
                           </div>
                         </div>
                         <div class="uk-width-1-3@s">
-                          <label class="uk-form-label" for="form-stacked-text">Co-Orientador</label>
+                          <div class="uk-form-label">Co-Orientador</div>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['co_orientador']">
+                              <select class="uk-select" id="form-stacked-select" name="customer['orientador']">
+                                  <option value="">Selecione um co-orientador</option>
+                                  <option value="1">Daniela Claro</option>
+                                  <option value="2">Ivan Machado</option>
+                              </select>
                           </div>
                         </div>
                         <div class="uk-width-1-3@s">
