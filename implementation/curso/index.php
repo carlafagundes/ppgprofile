@@ -34,9 +34,8 @@
                       <thead>
                         <tr>
                       		<th>Nome</th>
+                          <th>Instituicao</th>
                       		<th>Conceito no MEC</th>
-                      		<th>Instituicao</th>
-                      		<th>Tipo</th>
                       		<th>Opções</th>
                       	</tr>
                       </thead>
@@ -45,9 +44,8 @@
                         <?php foreach ($curso as $customer) : ?>
                         	<tr>
                         		<td><?php echo $customer['nome']; ?></td>
+                            <td><?php echo $customer['instituicao']; ?></td>
                         		<td><?php echo $customer['conceito_mec']; ?></td>
-                        		<td><?php echo $customer['instituicao']; ?></td>
-                        		<td><?php echo $customer['tipo']; ?></td>
                           <td class="actions text-right">
                             <a href="view.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file" title="Visualizar"></a>
                             <a href="edit.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file-edit" title="Editar"></a>

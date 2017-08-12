@@ -35,8 +35,8 @@
                           <div class="uk-form-controls">
                             <select class="uk-select" id="form-stacked-select" name="customer['tipo']">
                               <option>Selecione o tipo da instituição</option>
-                              <option>Pública</option>
-                              <option>Privada</option>
+                              <option value="1">Pública</option>
+                              <option value="2">Privada</option>
                             </select>
                           </div>
                         </div>

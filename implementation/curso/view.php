@@ -27,11 +27,11 @@
                     <header class="panel_header">
                         <h2 class="title pull-left uk-heading-bullet">Nome:<?php echo $customer['nome']; ?></h2>
                     </header>
+                    <header class="panel_header">
+                      <h2 class="title pull-left uk-heading-bullet">Instituiçaõ:<?php echo $customer['instituicao']; ?></h2>
+                    </header>
 										<header class="panel_header">
 											<h2 class="title pull-left uk-heading-bullet">Conceito no MEC:<?php echo $customer['conceito_mec']; ?></h2>
-										</header>
-										<header class="panel_header">
-											<h2 class="title pull-left uk-heading-bullet">Instituiçaõ:<?php echo $customer['instituicao']; ?></h2>
 										</header>
 										<header class="panel_header">
 											<h2 class="title pull-left uk-heading-bullet">Tipo:<?php echo $customer['tipo']; ?></h2>
