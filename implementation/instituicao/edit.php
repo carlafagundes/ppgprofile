@@ -22,27 +22,22 @@
                 <div class="content-body">
                   <form action="edit.php?id=<?php echo $customer['id']; ?>" method="post" class="uk-grid-small" uk-grid>
                     <header class="panel_header">
-                        <h2 class="title pull-left uk-heading-bullet">Informações do Curso</h2>
+                        <h2 class="title pull-left uk-heading-bullet">Informações da Instituição</h2>
                     </header>
-                    <div class="uk-width-1-3@s">
+                    <div class="uk-width-1-2@s">
                       <label class="uk-form-label" for="form-stacked-text">Nome</label>
                       <div class="uk-form-controls">
                           <input class="uk-input" id="form-stacked-text" type="text" name="customer['nome']" value="<?php echo $customer['nome']; ?>">
                       </div>
                     </div>
-                    <div class="uk-width-1-3@s">
-                      <label class="uk-form-label" for="form-stacked-select">Instituição</label>
+                    <div class="uk-width-1-2@s">
+                      <div class="uk-form-label">Tipo</div>
                       <div class="uk-form-controls">
-                          <select class="uk-select" id="form-stacked-select" name="customer['instituicao']" value="<?php echo $customer['instituicao']; ?>">
-                              <option>Universidade Federal da Bahia</option>
-                              <option>Unifacs</option>
+                          <select class="uk-select" id="form-stacked-select" name="customer['tipo']" value="<?php echo $customer['tipo']; ?>">
+                            <option>Selecione o tipo da instituição</option>
+                            <option>Pública</option>
+                            <option>Privada</option>
                           </select>
-                      </div>
-                    </div>
-                    <div class="uk-width-1-3@s">
-                      <label class="uk-form-label" for="form-stacked-text">Conceito no MEC</label>
-                      <div class="uk-form-controls">
-                          <input class="uk-input" id="form-stacked-text" type="number" name="customer['conceito_mec']" value="<?php echo $customer['conceito_mec']; ?>">
                       </div>
                     </div>
                     <div id="actions" class="cadastrar">

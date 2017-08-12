@@ -56,6 +56,7 @@
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li><a href="<?php echo BASEURL; ?>aluno/add.php">Aluno</a></li>
                         <li><a href="<?php echo BASEURL; ?>professor/add.php">Professor</a></li>
+                        <li><a href="<?php echo BASEURL; ?>instituicao/add.php">Instituição</a></li>
                         <li><a href="<?php echo BASEURL; ?>curso/add.php">Curso</a></li>
                     </ul>
                 </div>

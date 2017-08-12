@@ -21,6 +21,7 @@
                   <li><a href="<?php echo BASEURL; ?>aluno/add.php">Aluno</a></li>
                   <li><a href="<?php echo BASEURL; ?>professor/add.php">Professor</a></li>
                   <li><a href="<?php echo BASEURL; ?>curso/add.php">Curso</a></li>
+                  <li><a href="<?php echo BASEURL; ?>instituicao/add.php">Instituição</a></li>
                 </ul>
               </li>
               <li><a href="<?php echo BASEURL; ?>qualificar/add.php">Qualificar Aluno</a></li>

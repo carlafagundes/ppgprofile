@@ -22,6 +22,9 @@
                           <a href="<?php echo BASEURL; ?>professor"><h2 class="title pull-left uk-heading-bullet">Professores</h2></a>
                       </header>
                       <header class="panel_header">
+                          <a href="<?php echo BASEURL; ?>instituicao"><h2 class="title pull-left uk-heading-bullet">Instituições</h2></a>
+                      </header>
+                      <header class="panel_header">
                           <a href="<?php echo BASEURL; ?>curso"><h2 class="title pull-left uk-heading-bullet">Cursos</h2></a>
                       </header>
                     </div>
