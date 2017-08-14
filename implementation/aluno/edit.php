@@ -40,9 +40,17 @@ edit();
                   <div class="uk-width-1-3@s">
                     <div class="uk-form-label">Sexo</div>
                     <div class="uk-form-controls">
-                      <select class="uk-select" id="form-stacked-select" name="customer['sexo']" value="<?php echo $customer['sexo'];?>">
-                        <option value="M"<?php echo selected( 'M', $customer['sexo'] ); ?> > Masculino </option>
-                        <option value="F"<?php echo selected( 'F', $customer['sexo'] ); ?> > Feminino </option>
+                      <select class="uk-select" id="form-stacked-select" name="customer['genero']" value="<?php echo $customer['genero'];?>">
+                        <?php if($customer['genero']=='M') {
+                        echo '<option value="M" selected>Masculino</option>';
+                        echo '<option value="F">Femenino</option>';
+                      }
+                              else if($customer['genero']=='F') {
+                                echo '<option value="F" selected>Femenino</option>';
+                              echo '<option value="M" >Masculino</option>';
+                            }
+                         ?>
+                        
                       </select>
                     </div>
                   </div>
@@ -136,10 +144,21 @@ edit();
                 <div class="uk-width-1-3@s">
                   <div class="uk-form-label">Curso</div>
                   <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" name="customer['curso']" value="<?php echo $customer['curso']; ?>">
-                      <option>Curso A da UFBA</option>
-                      <option>Curso A da Unifacs</option>
-                    </select>
+                    <select class="uk-select" id="form-stacked-select" name="customer['idCursoGraduacao']" id="id_instituicao">
+                    <?php 
+                    $sql = "SELECT * FROM curso";
+                    $bd=open_database();
+                    $resultado = mysqli_query($bd, $sql);
+                    while ($dados = mysqli_fetch_assoc($resultado)){
+                      $id = $dados['id'];
+                      $nome = $dados['nome'];
+                      if( $id == $customer['idCursoGraduacao'])
+                        echo "<option value='$id' selected>$nome</option>";
+                      else
+                        echo "<option value='$id'>$nome</option>";
+                    }
+                    ?>
+                  </select>
                   </div>
                 </div>
                 <div class="uk-width-1-3@s">
@@ -151,7 +170,7 @@ edit();
                 <div class="uk-width-1-3@s">
                   <label class="uk-form-label" for="form-stacked-text">Ano de Conclusão</label>
                   <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="number" name="customer['anoConclusao']" value="<?php echo $customer['anoConclusao']; ?>">
+                    <input class="uk-input" id="form-stacked-text" type="number" name="customer['anoConclusaoGraduacao']" value="<?php echo $customer['anoConclusaoGraduacao']; ?>">
                   </div>
                 </div>                     
                 <header class="panel_header">
@@ -172,25 +191,52 @@ edit();
                 <div class="uk-width-1-3@s">
                   <div class="uk-form-label">Orientador</div>
                   <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" name="customer['orientador']" value="<?php echo $customer['orientador']; ?>">
-                      <option value="">Selecione um orientador</option>
-                      <option value="1">Daniela Claro</option>
-                      <option value="2">Ivan Machado</option>
-                    </select>
+                    <select class="uk-select" id="form-stacked-select" name="customer['idOrientador']" id="id_instituicao">
+                    <?php 
+                    $sql = "SELECT * FROM professor";
+                    $bd=open_database();
+                    $resultado = mysqli_query($bd, $sql);
+                    while ($dados = mysqli_fetch_assoc($resultado)){
+                      $id = $dados['id'];
+                      $nome = $dados['nome'];
+                      if( $id == $customer['idOrientador'])
+                        echo "<option value='$id' selected>$nome</option>";
+                      else
+                        echo "<option value='$id'>$nome</option>";
+                    }
+                    ?>
+                  </select>
                   </div>
                 </div>
                 <div class="uk-width-1-3@s">
                   <label class="uk-form-label" for="form-stacked-text">Co-Orientador</label>
-                  <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="text" name="customer['coOrientador']" value="<?php echo $customer['coOrientador']; ?>">
+                 <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select" name="customer['idCoOrientador']" id="id_instituicao">
+                    <?php 
+                    $sql = "SELECT * FROM professor";
+                    $bd=open_database();
+                    $resultado = mysqli_query($bd, $sql);
+                    while ($dados = mysqli_fetch_assoc($resultado)){
+                      $id = $dados['id'];
+                      $nome = $dados['nome'];
+                      if( $id == $customer['idCoOrientador'])
+                        echo "<option value='$id' selected>$nome</option>";
+                      else
+                        echo "<option value='$id'>$nome</option>";
+                    }
+                    ?>
+                  </select>
                   </div>
                 </div>
                 <div class="uk-width-1-3@s">
-                  <div class="uk-form-label">Nível</div>
+                  <div class="uk-form-label">Título</div>
                   <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" name="customer['nivel']" value="<?php echo $customer['nivel']; ?>">
-                      <option value="M"<?php echo selected( 'M', $customer['nivel'] ); ?> > Mestrado </option>
-                      <option value="F"<?php echo selected( 'D', $customer['nivel'] ); ?> > Doutorado </option>
+                     <select class="uk-select" id="form-stacked-select" name="customer['titulo']" value="">
+                      <?php if($customer['titulo'] == 1){ 
+                        echo '<option value="'.$customer['titulo'].'">Mestrado</option>'; 
+                        echo '<option value="2">Doutorado</option>'; } 
+                        else{ echo '<option value="'.$customer['titulo'].'">Doutorado</option>'; 
+                        echo '<option value="1">Mestrado</option>'; } ?>
                     </select>
                   </div>
                 </div>

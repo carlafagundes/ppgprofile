@@ -25,10 +25,10 @@ view($_GET['id']);
                  <div class="alert alert-<?php echo $_SESSION['type']; ?>"><?php echo $_SESSION['message']; ?></div>
                <?php endif; ?>
                <header class="panel_header">
-                 <h2 class="title pull-left uk-heading-bullet">Instituição:<?php echo $customer['nome']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Instituição: <?php echo $customer['nome']; ?></h2>
                </header>
                <header class="panel_header">
-                 <h2 class="title pull-left uk-heading-bullet">Tipo:<?php echo $customer['tipo']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Tipo: <?php echo ($customer['tipo'] == 1) ? "Pública" : "Privada" ?></h2>
                </header>
                <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar"><button class="uk-button uk-button-primary">Editar</button></a>
                <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>

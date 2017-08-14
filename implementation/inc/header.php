@@ -54,15 +54,16 @@
                   <a href="#">Cadastrar</a>
                   <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li><a href="<?php echo BASEURL; ?>aluno/add.php">Aluno</a></li>
-                        <li><a href="<?php echo BASEURL; ?>professor/add.php">Professor</a></li>
-                        <li><a href="<?php echo BASEURL; ?>instituicao/add.php">Instituição</a></li>
-                        <li><a href="<?php echo BASEURL; ?>curso/add.php">Curso</a></li>
+                      <li><a href="<?php echo BASEURL; ?>instituicao/add.php">Instituição</a></li>
+                      <li><a href="<?php echo BASEURL; ?>departamento/add.php">Departamento</a></li>
+                      <li><a href="<?php echo BASEURL; ?>curso/add.php">Curso</a></li>
+                      <li><a href="<?php echo BASEURL; ?>professor/add.php">Professor</a></li>
+                      <li><a href="<?php echo BASEURL; ?>aluno/add.php">Aluno</a></li>
                     </ul>
-                </div>
+                  </div>
                 </li>
                 <li><a href="<?php echo BASEURL; ?>qualificar/add.php">Qualificar Aluno</a></li>
-              	<li><a href="<?php echo BASEURL; ?>relatorio/relatorio.php">Relatório</a></li>
+                <li><a href="<?php echo BASEURL; ?>relatorio/relatorio.php">Relatório</a></li>
               </ul>
             </div>
           </div>
@@ -76,7 +77,7 @@
             <div class="logout" uk-icon="icon: sign-out">
               <a href="#">Logout</a>
             </div>
-        </div>
+          </div>
         </nav>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <?php
 /** O nome do banco de dados*/
-define('DB_NAME', 'ppg_bd');
+define('DB_NAME', 'ppgprofile');
 /** Usuário do banco de dados MySQL */
 define('DB_USER', 'root');
 /** Senha do banco de dados MySQL */

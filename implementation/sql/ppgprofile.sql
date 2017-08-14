@@ -27,6 +27,8 @@ CREATE TABLE IF NOT EXISTS `ppgprofile`.`instituicao` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) NOT NULL,
   `tipo` INT NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -36,10 +38,13 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`departamento` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `idInstituicao` INT NOT NULL,
   `nome` VARCHAR(255) NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `instituicao`
-    FOREIGN KEY (`id`)
+  CONSTRAINT `idInstituicaoDepartamento`
+    FOREIGN KEY (`idInstituicao`)
     REFERENCES `ppgprofile`.`instituicao` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
@@ -51,28 +56,26 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`curso` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `idDepartamento` INT NOT NULL,
+  `idInstituicao` INT NOT NULL,
   `nome` VARCHAR(255) NOT NULL,
-  `conceitoMec` INT NOT NULL,
+  `conceitoMec` DECIMAL(2,1) NOT NULL,
   `turno` VARCHAR(45) NULL,
   `campus` VARCHAR(45) NULL,
   `anoCriacao` YEAR NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `departamentoCurso`
-    FOREIGN KEY (`id`)
+  CONSTRAINT `idDepartamentoCurso`
+    FOREIGN KEY (`idDepartamento`)
     REFERENCES `ppgprofile`.`departamento` (`id`)
     ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `idInstituicaoCurso`
+    FOREIGN KEY (`idInstituicao`)
+    REFERENCES `ppgprofile`.`instituicao` (`id`)
+    ON DELETE CASCADE
     ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `ppgprofile`.`usuario`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `ppgprofile`.`usuario` (
-  `login` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`login`),
-  UNIQUE INDEX `login_UNIQUE` (`login` ASC))
 ENGINE = InnoDB;
 
 
@@ -81,23 +84,27 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`professor` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `idDepartamento` INT NOT NULL,
+  `idInstituicao` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `sobrenome` VARCHAR(45) NOT NULL,
   `siape` CHAR(7) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(400) NOT NULL,
   `dataAdmissao` DATE NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `usuario_idx` (`email` ASC),
   UNIQUE INDEX `siape_UNIQUE` (`siape` ASC),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC),
-  CONSTRAINT `departamentoProfessor`
-    FOREIGN KEY (`id`)
+  CONSTRAINT `idDepartamentoProfessor`
+    FOREIGN KEY (`idDepartamento`)
     REFERENCES `ppgprofile`.`departamento` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `usuario`
-    FOREIGN KEY (`email`)
-    REFERENCES `ppgprofile`.`usuario` (`login`)
+  CONSTRAINT `idInstituicaoProfessor`
+    FOREIGN KEY (`idInstituicao`)
+    REFERENCES `ppgprofile`.`instituicao` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -110,13 +117,10 @@ CREATE TABLE IF NOT EXISTS `ppgprofile`.`administrador` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
   `sobrenome` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `usuario_idx` (`nome` ASC),
-  CONSTRAINT `usuarioAdministrador`
-    FOREIGN KEY (`nome`)
-    REFERENCES `ppgprofile`.`usuario` (`login`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
+  PRIMARY KEY (`id`)
+)
 ENGINE = InnoDB;
 
 
@@ -126,6 +130,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`entidadeFinanciadora` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -138,6 +144,8 @@ CREATE TABLE IF NOT EXISTS `ppgprofile`.`bolsaEstudo` (
   `tipo` VARCHAR(45) NOT NULL,
   `valor` DOUBLE NOT NULL,
   `validade` DATE NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `departamentoBolsaEstudo`
     FOREIGN KEY (`id`)
@@ -157,6 +165,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`aluno` (
   `id` INT NOT NULL AUTO_INCREMENT,
+  `idInstituicao` INT NOT NULL,
+  `idOrientador` INT NOT NULL,
+  `idCoOrientador` INT NOT NULL,
+  `idCursoGraduacao` INT NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
   `sobrenome` VARCHAR(45) NOT NULL,
   `genero` CHAR(1) NOT NULL,
@@ -169,32 +181,35 @@ CREATE TABLE IF NOT EXISTS `ppgprofile`.`aluno` (
   `cidade` VARCHAR(45) NOT NULL,
   `estado` VARCHAR(45) NOT NULL,
   `cep` CHAR(8) NOT NULL,
-  `crGraduacao` DOUBLE NOT NULL,
+  `cursoPosGraducao` VARCHAR(150) NOT NULL,
+  `crGraduacao` DECIMAL(3,1) NOT NULL,
   `anoConclusaoGraduacao` YEAR NOT NULL,
   `semestreIngresso` CHAR(6) NOT NULL,
   `dedicacao` INT NOT NULL,
   `areaConhecimento` VARCHAR(255) NOT NULL,
   `titulo` INT NOT NULL,
-  `cr` DOUBLE NOT NULL,
+  `cr` DECIMAL(3,1) NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
+  CONSTRAINT `idInstituicaoAluno`
+    FOREIGN KEY (`idInstituicao`)
+    REFERENCES `ppgprofile`.`instituicao` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+  CONSTRAINT `idOrientadorAluno`
+    FOREIGN KEY (`idOrientador`)
+    REFERENCES `ppgprofile`.`professor` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
+    CONSTRAINT `idCoOrientadorAluno`
+    FOREIGN KEY (`idCoOrientador`)
+    REFERENCES `ppgprofile`.`professor` (`id`)
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT,
   CONSTRAINT `cursoGraduacao`
-    FOREIGN KEY (`id`)
+    FOREIGN KEY (`idCursoGraduacao`)
     REFERENCES `ppgprofile`.`curso` (`id`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
-  CONSTRAINT `curso`
-    FOREIGN KEY (`id`)
-    REFERENCES `ppgprofile`.`curso` (`id`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
-  CONSTRAINT `orientador`
-    FOREIGN KEY (`id`)
-    REFERENCES `ppgprofile`.`professor` (`id`)
-    ON DELETE RESTRICT
-    ON UPDATE RESTRICT,
-  CONSTRAINT `coOrientador`
-    FOREIGN KEY (`id`)
-    REFERENCES `ppgprofile`.`professor` (`id`)
     ON DELETE RESTRICT
     ON UPDATE RESTRICT)
 ENGINE = InnoDB;
@@ -207,6 +222,8 @@ CREATE TABLE IF NOT EXISTS `ppgprofile`.`defesa` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `data` DATE NOT NULL,
   `aprovacao` INT NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `aluno`
     FOREIGN KEY (`id`)
@@ -222,6 +239,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ppgprofile`.`avaliacao_defesa` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nota` DOUBLE NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `defesa`
     FOREIGN KEY (`id`)

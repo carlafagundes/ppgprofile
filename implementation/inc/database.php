@@ -75,6 +75,9 @@ function save($table = null, $data = null) {
   
   $sql = "INSERT INTO " . $table . "($columns)" . " VALUES " . "($values);";
   try {
+
+    //exit($sql);
+
     $database->query($sql);
     $_SESSION['message'] = 'Registro cadastrado com sucesso.';
     $_SESSION['type'] = 'success';

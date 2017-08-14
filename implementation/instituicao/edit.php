@@ -9,9 +9,9 @@ edit();
     <div class="page-head">
       <ul class="uk-breadcrumb">
         <li><a href="<?php echo BASEURL; ?>index.php">Visão Geral</a></li>
-        <li><span>Editar Curso</span></li>
+        <li><span>Editar Instituição</span></li>
       </ul>
-      <h2 class="page-head-title uk-heading-bullet">Editar Curso</h2>
+      <h2 class="page-head-title uk-heading-bullet">Editar Instituição</h2>
     </div>
     <div class="uk-grid-medium uk-child-width-expand@s uk-text-left" uk-grid>
       <div>
@@ -31,9 +31,12 @@ edit();
                 <div class="uk-width-1-2@s">
                   <div class="uk-form-label">Tipo</div>
                   <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" name="customer['tipo']" value="<?php echo $customer['tipo']; ?>">
-                      <option value="M"<?php echo selected( '1', $customer['tipo'] ); ?> > Pública </option>
-                      <option value="F"<?php echo selected( '2', $customer['tipo'] ); ?> > Privada </option>
+                    <select class="uk-select" id="form-stacked-select" name="customer['tipo']" value="">
+                      <?php if($customer['tipo'] == 1){ 
+                        echo '<option value="'.$customer['tipo'].'">Pública</option>'; 
+                        echo '<option value="2">Privada</option>'; } 
+                        else{ echo '<option value="'.$customer['tipo'].'">Privada</option>'; 
+                        echo '<option value="1">Pública</option>'; } ?>
                     </select>
                   </div>
                 </div>

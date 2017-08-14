@@ -24,27 +24,78 @@ add();
                   <h2 class="title pull-left uk-heading-bullet">Informações do Curso</h2>
                 </header>
                 <form action="add.php" method="post" class="uk-grid-small" uk-grid>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">Nome</label>
                     <div class="uk-form-controls">
                       <input class="uk-input" id="form-stacked-text" type="text" name="customer['nome']">
                     </div>
                   </div>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-select">Instituição</label>
                     <div class="uk-form-controls">
-                      <select class="uk-select" id="form-stacked-select" name="customer['instituicao']">
-                        <option>Universidade Federal da Bahia</option>
-                        <option>Unifacs</option>
-                      </select>
+                       <select class="uk-select" id="form-stacked-select" name="customer['idInstituicao']" id="id_instituicao">
+                              <option value="">Selecione a instituição</option>
+                              <?php 
+                                $sql = "SELECT * FROM instituicao";
+                                $bd=open_database();
+                                $resultado = mysqli_query($bd, $sql);
+                                while ($dados = mysqli_fetch_assoc($resultado)){
+                                  $id = $dados['id'];
+                                  $nome = $dados['nome'];
+                                  echo "<option value='$id'>$nome</option>";
+                                }
+                              ?>
+                            </select>
+                    </div>
+                  </div>
+                  <div class="uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-select">Departamento</label>
+                    <div class="uk-form-controls">
+                     <select class="uk-select" id="form-stacked-select" name="customer['idDepartamento']" id="id_departamento">
+                              <option value="">Selecione um departamento</option>
+                              <?php 
+                                $sql = "SELECT * FROM departamento";
+                                $bd=open_database();
+                                $resultado = mysqli_query($bd, $sql);
+                                while ($dados = mysqli_fetch_assoc($resultado)){
+                                  $id = $dados['id'];
+                                  $nome = $dados['nome'];
+                                  echo "<option value='$id'>$nome</option>";
+                                }
+                              ?>
+                            </select>
+                    </div>
+                  </div>
+                  <div class="uk-width-1-2@s">
+                    <label class="uk-form-label" for="form-stacked-text">Campus</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input" id="form-stacked-text" type="text" name="customer['campus']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label" for="form-stacked-text">Conceito no MEC</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="number" name="customer['conceito_mec']">
+                      <input class="uk-input" id="form-stacked-text" type="number" name="customer['conceitoMEC']">
                     </div>
                   </div>
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-select">Turno</label>
+                    <div class="uk-form-controls">
+                      <select class="uk-select" id="form-stacked-select" name="customer['turno']">
+                        <option value="0">Selecione um turno</option>
+                        <option value="M">Matutino</option>
+                        <option value="V">Vespertino</option>
+                        <option value="N">Noturno</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Ano de Criação</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input" id="form-stacked-text" type="number" name="customer['anoCriacao']">
+                    </div>
+                  </div>
+                  
                   <div id="actions" class="cadastrar">
                     <button type="submit" class="uk-button uk-button-primary">Cadastrar</button>
                     <a href="index.php" class="uk-button uk-button-danger">Cancelar</a>

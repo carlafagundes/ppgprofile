@@ -10,11 +10,11 @@ index();
     <div class="page-head">
       <ul class="uk-breadcrumb">
         <li><a href="<?php echo BASEURL; ?>index.php">Visão Geral</a></li>
-        <li><span>Lista de Instituições</span></li>
+        <li><span>Lista de Departamentos</span></li>
       </ul>
-      <h2 class="page-head-title uk-heading-bullet">Lista de Instituições</h2>
+      <h2 class="page-head-title uk-heading-bullet">Lista de Departamentos</h2>
       <div class="cadastrar">
-        <a href="<?php echo BASEURL; ?>instituicao/add.php"><button class="uk-button uk-button-primary">Adicionar Nova Instituição</button></a>
+        <a href="<?php echo BASEURL; ?>departamento/add.php"><button class="uk-button uk-button-primary">Adicionar Novo Departamento</button></a>
       </div>
     </div>
     <div class="uk-grid-medium uk-child-width-expand@s uk-text-left" uk-grid>
@@ -33,17 +33,26 @@ index();
               <table class="uk-table uk-table-hover uk-table-divider">
                 <thead>
                   <tr>
-                    <th>Instituicao</th>
-                    <th>Tipo</th>
+                    <th>Departamento</th>
+                    <th>Instituição</th>
                     <th>Opções</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php if ($instituicao) : ?>
-                    <?php foreach ($instituicao as $customer) : ?>
+                  <?php if ($departamento) : ?>
+                    <?php foreach ($departamento as $customer) : ?>
                      <tr>
                       <td><?php echo $customer['nome']; ?></td>
-                      <td><?php echo ($customer['tipo'] == 1) ? "Pública" : "Privada" ?></td>
+                      <td><?php $idDaInstituicao = $customer['idInstituicao']; 
+                          $sql = "SELECT nome FROM instituicao where id=".$customer['idInstituicao'];
+                                $bd=open_database();
+                                $resultado = mysqli_query($bd, $sql);
+                                while ($dados = mysqli_fetch_assoc($resultado)){
+                                  
+                                  echo $dados['nome'];
+                                }
+
+                      ?></td>
                       <td class="actions text-right">
                         <a href="view.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file" title="Visualizar"></a>
                         <a href="edit.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file-edit" title="Editar"></a>

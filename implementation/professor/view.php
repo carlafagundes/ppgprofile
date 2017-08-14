@@ -23,22 +23,43 @@ view($_GET['id']);
                   <div class="alert alert-<?php echo $_SESSION['type']; ?>"><?php echo $_SESSION['message']; ?></div>
                 <?php endif; ?>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Nome: <?php echo $customer['pNome']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Nome: <?php echo $customer['nome']; ?></h2>
                 </header>
                 <header class="panel_header">
-                 <h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['uNome']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['sobrenome']; ?></h2>
                 </header>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">SIAPE: <?php echo $customer['siape']; ?></h2>
                 </header>
-                <header class="panel_header">
+                 <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Data Admissão: <?php echo $customer['dataAdmissao']; ?></h2>
+                </header>
+                 <header class="panel_header">
+               <h2 class="title pull-left uk-heading-bullet">Departamento: <?php $idDaInstituicao = $customer['idDepartamento']; 
+                $sql = "SELECT nome FROM departamento where id=".$customer['idDepartamento'];
+                $bd=open_database();
+                $resultado = mysqli_query($bd, $sql);
+                while ($dados = mysqli_fetch_assoc($resultado)){
+
+                  echo $dados['nome'];
+                }
+
+                ?></h2>
+              </header>
+                 <header class="panel_header">
+               <h2 class="title pull-left uk-heading-bullet">Instituição: <?php $idDaInstituicao = $customer['idInstituicao']; 
+                $sql = "SELECT nome FROM instituicao where id=".$customer['idInstituicao'];
+                $bd=open_database();
+                $resultado = mysqli_query($bd, $sql);
+                while ($dados = mysqli_fetch_assoc($resultado)){
+
+                  echo $dados['nome'];
+                }
+
+                ?></h2>
+              </header>
+                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Email: <?php echo $customer['email']; ?></h2>
-                </header>
-                <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Modificado em : <?php echo $customer['modified']; ?></h2>
-                </header>
-                <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Criado em : <?php echo $customer['created']; ?></h2>
                 </header>
                 <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar">
                   <button class="uk-button uk-button-primary">Editar</button>

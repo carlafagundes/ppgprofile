@@ -1,5 +1,6 @@
 <?php
   require_once('functions.php');
+  include_once('../inc/database.php');
   add();
 ?>
 
@@ -10,9 +11,9 @@
       <div class="page-head">
         <ul class="uk-breadcrumb">
           <li><a href="<?php echo BASEURL; ?>index.php">Visão Geral</a></li>
-          <li><span>Cadastrar Instituição</span></li>
+          <li><span>Cadastrar Departamento</span></li>
       </ul>
-        <h2 class="page-head-title uk-heading-bullet">Cadastrar Instituição</h2>
+        <h2 class="page-head-title uk-heading-bullet">Cadastrar Departamento</h2>
       </div>
       <div class="uk-grid-medium uk-child-width-expand@s uk-text-left" uk-grid>
         <div>
@@ -22,7 +23,7 @@
                     <div class="row">
                       <form action="add.php" method="post" class="uk-grid-small" uk-grid>
                         <header class="panel_header">
-                            <h2 class="title pull-left uk-heading-bullet">Informações da Instituição</h2>
+                            <h2 class="title pull-left uk-heading-bullet">Informações do Departamento</h2>
                         </header>
                         <div class="uk-width-1-2@s">
                           <label class="uk-form-label" for="form-stacked-text">Nome</label>
@@ -31,12 +32,20 @@
                           </div>
                         </div>
                         <div class="uk-width-1-2@s">
-                          <div class="uk-form-label">Tipo</div>
+                          <div class="uk-form-label">Instituição</div>
                           <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select" name="customer['tipo']">
-                              <option value="0">Selecione o tipo da instituição</option>
-                              <option value="1">Pública</option>
-                              <option value="2">Privada</option>
+                            <select class="uk-select" id="form-stacked-select" name="customer['idInstituicao']" id="id_instituicao">
+                              <option value="">Selecione a instituição</option>
+                              <?php 
+                                $sql = "SELECT * FROM instituicao";
+                                $bd=open_database();
+                                $resultado = mysqli_query($bd, $sql);
+                                while ($dados = mysqli_fetch_assoc($resultado)){
+                                  $id = $dados['id'];
+                                  $nome = $dados['nome'];
+                                  echo "<option value='$id'>$nome</option>";
+                                }
+                              ?>
                             </select>
                           </div>
                         </div>

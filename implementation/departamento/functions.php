@@ -1,33 +1,32 @@
 <?php
 require_once('../config.php');
 require_once(DBAPI);
-$instituicao = null;
+$departamento = null;
 $customer = null;
 /**
- *  Listagem de instituições
+ *  Listagem de departamentos
  */
 function index() {
-	global $instituicao;
-	$instituicao = find_all('instituicao');
+	global $departamento;
+	$departamento = find_all('departamento');
 }
 /**
- *  Cadastro de instituições
+ *  Cadastro de departamentos
  */
 function add() {
   if (!empty($_POST['customer'])) {
     
-    //exit(var_dump($_POST['customer']));
     $today = 
       date_create('now', new DateTimeZone('America/Sao_Paulo'));
     $customer = $_POST['customer'];
     $customer['modified'] = $customer['created'] = $today->format("Y-m-d H:i:s");
     
-    save('instituicao', $customer);
+    save('departamento', $customer);
     header('location: index.php');
   }
 }
 /**
- *  Edição de um instituições
+ *  Edição de um departamentos
  */
 function edit() {
   $now = date_create('now', new DateTimeZone('America/Sao_Paulo'));
@@ -36,11 +35,11 @@ function edit() {
     if (isset($_POST['customer'])) {
       $customer = $_POST['customer'];
       $customer['modified'] = $now->format("Y-m-d H:i:s");
-      update('instituicao', $id, $customer);
+      update('departamento', $id, $customer);
       header('location: index.php');
     } else {
       global $customer;
-      $customer = find('instituicao', $id);
+      $customer = find('departamento', $id);
     } 
   } else {
     header('location: index.php');
@@ -48,18 +47,18 @@ function edit() {
 }
 
 /**
- *  Visualização de um instituições
+ *  Visualização de um departamentos
  */
 function view($id = null) {
   global $customer;
-  $customer = find('instituicao', $id);
+  $customer = find('departamento', $id);
 }
 
 /**
- *  Exclusão de um instituições
+ *  Exclusão de um departamentos
  */
 function delete($id = null) {
   global $customer;
-  $customer = remove('instituicao', $id);
+  $customer = remove('departamento', $id);
   header('location: index.php');
 }
