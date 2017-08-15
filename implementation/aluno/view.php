@@ -31,7 +31,7 @@ view($_GET['id']);
                   <h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['sobrenome']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo $customer['genero']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo ($customer['genero'] == 1) ? "Masculino" : "Feminino" ?></h2>
                 </header>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">CPF: <?php echo $customer['cpf']; ?></h2>
@@ -61,22 +61,52 @@ view($_GET['id']);
                   <h2 class="title pull-left uk-heading-bullet">CEP: <?php echo $customer['cep']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Curso da Graduação: <?php echo $customer['idCursoGraduacao']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Curso da Graduação: <?php $idDaInstituicao = $customer['idCursoGraduacao']; 
+                  $sql = "SELECT nome FROM curso where id=".$customer['idCursoGraduacao'];
+                  $bd=open_database();
+                  $resultado = mysqli_query($bd, $sql);
+                  while ($dados = mysqli_fetch_assoc($resultado)){
+                    
+                    echo $dados['nome'];
+                  }
+
+                  ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Área de Conhecimento: <?php echo $customer['areaConhecimento']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Instituição: <?php $idDaInstituicao = $customer['idInstituicao']; 
+                  $sql = "SELECT nome FROM instituicao where id=".$customer['idInstituicao'];
+                  $bd=open_database();
+                  $resultado = mysqli_query($bd, $sql);
+                  while ($dados = mysqli_fetch_assoc($resultado)){
+                    
+                    echo $dados['nome'];
+                  }
+
+                  ?></h2>
                 </header>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">CR da Graduação: <?php echo $customer['crGraduacao']; ?></h2>
                 </header>
                 <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Ano de Conclusão: <?php echo $customer['anoConclusaoGraduacao']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Curso da Pós Graduação: <?php echo $customer['cursoPosGraducao']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Área de Conhecimento: <?php echo $customer['areaConhecimento']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">CR da Pós Graduação: <?php echo $customer['cr']; ?></h2>
+                </header>
+                <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Semestre de Ingresso: <?php echo $customer['semestreIngresso']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Dedicação: <?php echo $customer['dedicacao']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Dedicação: <?php echo ($customer['dedicacao'] == 1) ? "Exclusiva" : "Parcial" ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Título: <?php echo $customer['titulo']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Título: <?php echo ($customer['genero'] == 1) ? "Mestrador" : "Doutorado" ?></h2>
                 </header>
                 <header class="panel_header">
                  <h2 class="title pull-left uk-heading-bullet">Orientador: <?php $idDaInstituicao = $customer['idOrientador']; 

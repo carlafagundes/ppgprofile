@@ -67,7 +67,10 @@ function save($table = null, $data = null) {
   //print_r($data);
   foreach ($data as $key => $value) {
     $columns .= trim($key, "'") . ",";
-    $values .= "'$value',";
+    if($key=="'senha'")// se o campo for senha aplique a criptografia sha256
+    	$values .= "SHA2('$value',256),";
+    else
+    	$values .= "'$value',";
   }
   // remove a ultima virgula
   $columns = rtrim($columns, ',');

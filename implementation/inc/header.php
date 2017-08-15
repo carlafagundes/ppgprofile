@@ -1,3 +1,9 @@
+<?php 
+ini_set("allow_url_include", "1");//coloque isso em todas as paginas que realizam include ou require para evitar q o servidor online rejeite alguma inclusao de arquivo
+session_start();//iniciar sessao
+error_reporting(false);// para nao da exit() de erros na tela
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -69,17 +75,17 @@
           </div>
           <div class="uk-navbar-right">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link" aria-expanded="false">
+              <span class="user-name"><?php echo $_SESSION['nome']; ?></span>
               <span class="avatar avatar-online">
-                <img src="<?php echo BASEURL; ?>images/avatar.png" alt="avatar"><i></i>
-              </span>
-              <span class="user-name">Edicarla Silva</span>
-            </a>
-            <div class="logout" uk-icon="icon: sign-out">
-              <a href="#">Logout</a>
-            </div>
+                <div class="logout" uk-icon="icon: user"></div>
+             </span>
+           </a>
+           <div class="logout" uk-icon="icon: sign-out">
+            <a href="<?php echo BASEURL; ?>/logout.php">Logout</a>
           </div>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
   </div>
-  <main class="uk-container">
+</div>
+<main class="uk-container">

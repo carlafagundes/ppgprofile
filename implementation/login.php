@@ -1,5 +1,6 @@
 <?php require_once 'config.php'; ?>
 <?php require_once DBAPI; ?>
+<?php error_reporting(false);// para nao da exit() de erros na tel?>
 <?php $db = open_database(); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,27 +28,39 @@
   <div class="row">
     <div class="uk-grid-medium uk-child-width-expand@s uk-text-left" uk-grid>
       <div>
-          <div class="uk-card uk-card-default uk-card-body" style="width: 50%; margin: 0 auto; top: 50%;">
+          <div class="uk-card uk-card-default uk-card-body" style="width: 50%; margin: 0 auto; top: 10%;">
             <div class="page-head" style="text-align: center; padding-bottom: 20px;">
               <img src="<?php echo BASEURL; ?>images/logo.png" alt="">
             </div>
             <section class="box ">
                 <div class="content-body">
                   <div class="row">
-                      <form action="" method="post" class="uk-grid-small" uk-grid>
+                      <form action="authenticate.php" method="post" class="uk-grid-small" uk-grid>
                         <div class="uk-width-1-@s">
                           <label class="uk-form-label" for="form-stacked-text">Login</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['']">
+                              <input class="uk-input" id="form-stacked-text" type="text" name="txt_login">
                           </div>
                         </div>
                         <div class="uk-width-1-@s">
                           <label class="uk-form-label" for="form-stacked-text">Senha</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="password" name="customer['']">
+                              <input class="uk-input" id="form-stacked-text" type="password" name="txt_senha">
                           </div>
                           <span><a href="#" class="uk-align-right senha">Esqueceu senha?</a></span>
+                          <br>
+                          <?php if($_GET['msg']=='dados_incorretos') echo '<span style="color:red;">Dados incorretos</span>'; ?>
                         </div>
+                        <div class="uk-width-1-@s">
+                    <label class="uk-form-label" for="form-stacked-select">Entrar como:</label>
+                    <div class="uk-form-controls">
+                      <select class="uk-select" id="form-stacked-select" name="txt_perfil" required="required">
+                        <option value="">Selecione um perfil</option>
+                        <option value="1">Professor</option>
+                        <option value="2">Administrador</option>
+                      </select>
+                    </div>
+                  </div>
                       <div id="actions" class="cadastrar">
                         <button type="submit" class="uk-button uk-button-primary">Entrar</button>
                       </div>
