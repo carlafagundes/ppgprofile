@@ -31,7 +31,7 @@ view($_GET['id']);
                   <h2 class="title pull-left uk-heading-bullet">Sobrenome: <?php echo $customer['sobrenome']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo $customer['sexo']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Gênero: <?php echo $customer['genero']; ?></h2>
                 </header>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">CPF: <?php echo $customer['cpf']; ?></h2>
@@ -40,31 +40,67 @@ view($_GET['id']);
                   <h2 class="title pull-left uk-heading-bullet">Data de Nascimento: <?php echo $customer['dataNascimento']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Nacionalidade:<?php echo $customer['nacionalidade']; ?></h2>
-                </header>                  
+                  <h2 class="title pull-left uk-heading-bullet">Nacionalidade: <?php echo $customer['nacionalidade']; ?></h2>
+                </header>   
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Curso: <?php echo $customer['curso']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Logradouro: <?php echo $customer['logradouro']; ?></h2>
+                </header>     
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Número: <?php echo $customer['numero']; ?></h2>
+                </header>      
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Bairro: <?php echo $customer['bairro']; ?></h2>
+                </header>    
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Cidade: <?php echo $customer['cidade']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">CR: <?php echo $customer['cr']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Estado: <?php echo $customer['estado']; ?></h2>
                 </header>
                 <header class="panel_header">
-                <h2 class="title pull-left uk-heading-bullet">Ano de Conclusão: <?php echo $customer['anoConclusao']; ?></h2>
-                </header>                    
+                  <h2 class="title pull-left uk-heading-bullet">CEP: <?php echo $customer['cep']; ?></h2>
+                </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Area de Conhecimento: <?php echo $customer['areaConhecimento']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Curso da Graduação: <?php echo $customer['idCursoGraduacao']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Área de Conhecimento: <?php echo $customer['areaConhecimento']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">CR da Graduação: <?php echo $customer['crGraduacao']; ?></h2>
                 </header>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Semestre de Ingresso: <?php echo $customer['semestreIngresso']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Orientador: <?php echo $customer['orientador']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Dedicação: <?php echo $customer['dedicacao']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Co-orientador: <?php echo $customer['coOrientador']; ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Título: <?php echo $customer['titulo']; ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Nível: <?php echo $customer['nivel']; ?></h2>
+                 <h2 class="title pull-left uk-heading-bullet">Orientador: <?php $idDaInstituicao = $customer['idOrientador']; 
+                  $sql = "SELECT nome FROM professor where id=".$customer['idOrientador'];
+                  $bd=open_database();
+                  $resultado = mysqli_query($bd, $sql);
+                  while ($dados = mysqli_fetch_assoc($resultado)){
+                    
+                    echo $dados['nome'];
+                  }
+
+                  ?></h2>
+                </header>
+                <header class="panel_header">
+                 <h2 class="title pull-left uk-heading-bullet">Co-Orientador: <?php $idDaInstituicao = $customer['idCoOrientador']; 
+                  $sql = "SELECT nome FROM professor where id=".$customer['idOrientador'];
+                  $bd=open_database();
+                  $resultado = mysqli_query($bd, $sql);
+                  while ($dados = mysqli_fetch_assoc($resultado)){
+                    
+                    echo $dados['nome'];
+                  }
+
+                  ?></h2>
                 </header>
                 <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar">
                   <button class="uk-button uk-button-primary">Editar</button>

@@ -43,10 +43,10 @@ edit();
                       <select class="uk-select" id="form-stacked-select" name="customer['genero']" value="<?php echo $customer['genero'];?>">
                         <?php if($customer['genero']=='M') {
                         echo '<option value="M" selected>Masculino</option>';
-                        echo '<option value="F">Femenino</option>';
+                        echo '<option value="F">Feminino</option>';
                       }
                               else if($customer['genero']=='F') {
-                                echo '<option value="F" selected>Femenino</option>';
+                                echo '<option value="F" selected>Feminino</option>';
                               echo '<option value="M" >Masculino</option>';
                             }
                          ?>
@@ -101,35 +101,120 @@ edit();
                   </div>
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label" for="form-stacked-text">Estado</label>
-                    <div class="uk-form-controls">                            
-                     <select class="uk-select" id="form-stacked-select" type="text" name="customer['estado']">
-                      <option value="AC">AC</option>
-                      <option value="AL">AL</option>
-                      <option value="AP">AP</option>
-                      <option value="AM">AM</option>
-                      <option value="BA">BA</option>
-                      <option value="CE">CE</option>
-                      <option value="ES">ES</option>
-                      <option value="DF">DF</option>
-                      <option value="MA">MA</option>
-                      <option value="MT">MT</option>
-                      <option value="MS">MS</option>
-                      <option value="MG">MG</option>
-                      <option value="PA">PA</option>
-                      <option value="PB">PB</option>
-                      <option value="PR">PR</option>
-                      <option value="PE">PE</option>
-                      <option value="PI">PI</option>
-                      <option value="RJ">RJ</option>
-                      <option value="RN">RN</option>
-                      <option value="RS">RS</option>
-                      <option value="RO">RO</option>
-                      <option value="RR">RR</option>
-                      <option value="SC">SC</option>
-                      <option value="SP">SP</option>
-                      <option value="SE">SE</option>
-                      <option value="TO">TO</option>
-                    </select>
+                    <div class="uk-form-controls">    
+                     
+                <select class="uk-select" id="form-stacked-select" name="customer['estado']" value="<?php echo $customer['estado'];?>">
+                <?php 
+                echo '<option value="AC" ';
+                if($customer['estado']=='AC'){ echo ' selected="selected"';} 
+                echo ">Acre</option>";
+
+                echo '<option value="AL" ';
+                if($customer['estado']=='AL'){ echo ' selected="selected"';} 
+                echo ">Alagoas</option>";
+
+                echo '<option value="AP" ';
+                if($customer['estado']=='AP'){ echo ' selected="selected"';} 
+                echo ">Amapá</option>";
+
+                echo '<option value="AM" ';
+                if($customer['estado']=='AM'){ echo ' selected="selected"';} 
+                echo ">Amazonas</option>";
+
+                echo '<option value="BA" ';
+                if($customer['estado']=='BA'){ echo ' selected="selected"';} 
+                echo ">Bahia</option>";
+
+                echo '<option value="CE" ';
+                if($customer['estado']=='CE'){ echo ' selected="selected"';} 
+                echo ">Ceará</option>";
+
+                echo '<option value="DF" ';
+                if($customer['estado']=='DF'){ echo ' selected="selected"';} 
+                echo ">Distrito Federal</option>";
+
+                echo '<option value="ES" ';
+                if($customer['estado']=='ES'){ echo ' selected="selected"';} 
+                echo ">Espírito Santo</option>";
+
+                echo '<option value="GO" ';
+                if($customer['estado']=='GO'){ echo ' selected="selected"';} 
+                echo ">Goiás</option>";
+
+                echo '<option value="MA" ';
+                if($customer['estado']=='MA'){ echo ' selected="selected"';} 
+                echo ">Maranhão</option>";
+
+                echo '<option value="MT" ';
+                if($customer['estado']=='MT'){ echo ' selected="selected"';} 
+                echo ">Mato Grosso</option>";
+
+                echo '<option value="MS" ';
+                if($customer['estado']=='MS'){ echo ' selected="selected"';} 
+                echo ">Mato Grosso do Sul</option>";
+
+                echo '<option value="MG" ';
+                if($customer['estado']=='MG'){ echo ' selected="selected"';} 
+                echo ">Minas Gerais</option>";
+
+                echo '<option value="PA" ';
+                if($customer['estado']=='PA'){ echo ' selected="selected"';} 
+                echo ">Pará</option>";
+
+                echo '<option value="PB" ';
+                if($customer['estado']=='PB'){ echo ' selected="selected"';} 
+                echo ">Paraíba</option>";
+
+                echo '<option value="PR" ';
+                if($customer['estado']=='PR'){ echo ' selected="selected"';} 
+                echo ">Paraná</option>";
+
+                echo '<option value="PE" ';
+                if($customer['estado']=='PE'){ echo ' selected="selected"';} 
+                echo ">Pernambuco</option>";
+
+                echo '<option value="PI" ';
+                if($customer['estado']=='PI'){ echo ' selected="selected"';} 
+                echo ">Piauí</option>";
+
+                echo '<option value="RJ" ';
+                if($customer['estado']=='RJ'){ echo ' selected="selected"';} 
+                echo ">Rio de Janeiro</option>";
+
+                echo '<option value="RN" ';
+                if($customer['estado']=='RN'){ echo ' selected="selected"';} 
+                echo ">Rio Grande do Norte</option>";
+                
+                echo '<option value="RS" ';
+                if($customer['estado']=='RS'){ echo ' selected="selected"';} 
+                echo ">Rio Grande do Sul</option>";
+
+                echo '<option value="RO" ';
+                if($customer['estado']=='RO'){ echo ' selected="selected"';} 
+                echo ">Rondônia</option>";
+
+                echo '<option value="RR" ';
+                if($customer['estado']=='RR'){ echo ' selected="selected"';} 
+                echo ">Roraima</option>";
+
+                echo '<option value="SC" ';
+                if($customer['estado']=='SC'){ echo ' selected="selected"';} 
+                echo ">Santa Catarina</option>";
+
+                echo '<option value="SP" ';
+                if($customer['estado']=='SP'){ echo ' selected="selected"';} 
+                echo ">São Paulo</option>";
+                
+                echo '<option value="SE" ';
+                if($customer['estado']=='SE'){ echo ' selected="selected"';} 
+                echo ">Sergipe</option>";
+
+                echo '<option value="TO" ';
+                if($customer['estado']=='TO'){ echo ' selected="selected"';} 
+                echo ">Tocantins</option>";
+
+                ?>
+                </select>
                   </div>
                 </div> 
                 <div class="uk-width-1-3@s">
@@ -141,7 +226,7 @@ edit();
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Graduação</h2>
                 </header>
-                <div class="uk-width-1-3@s">
+                <div class="uk-width-1-2@s">
                   <div class="uk-form-label">Curso</div>
                   <div class="uk-form-controls">
                     <select class="uk-select" id="form-stacked-select" name="customer['idCursoGraduacao']" id="id_instituicao">
@@ -161,13 +246,33 @@ edit();
                   </select>
                   </div>
                 </div>
-                <div class="uk-width-1-3@s">
-                  <label class="uk-form-label" for="form-stacked-text">CR</label>
+                <div class="uk-width-1-2@s">
+                  <div class="uk-form-label">Instituição</div>
                   <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="number" name="customer['cr']" value="<?php echo $customer['cr']; ?>">
+                    <select class="uk-select" id="form-stacked-select" name="customer['idInstituicao']" id="id_instituicao">
+                    <?php 
+                    $sql = "SELECT * FROM instituicao";
+                    $bd=open_database();
+                    $resultado = mysqli_query($bd, $sql);
+                    while ($dados = mysqli_fetch_assoc($resultado)){
+                      $id = $dados['id'];
+                      $nome = $dados['nome'];
+                      if( $id == $customer['idInstituicao'])
+                        echo "<option value='$id' selected>$nome</option>";
+                      else
+                        echo "<option value='$id'>$nome</option>";
+                    }
+                    ?>
+                  </select>
                   </div>
                 </div>
-                <div class="uk-width-1-3@s">
+                <div class="uk-width-1-2@s">
+                  <label class="uk-form-label" for="form-stacked-text">CR</label>
+                  <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="number" name="customer['crGraduacao']" value="<?php echo $customer['crGraduacao']; ?>">
+                  </div>
+                </div>
+                <div class="uk-width-1-2@s">
                   <label class="uk-form-label" for="form-stacked-text">Ano de Conclusão</label>
                   <div class="uk-form-controls">
                     <input class="uk-input" id="form-stacked-text" type="number" name="customer['anoConclusaoGraduacao']" value="<?php echo $customer['anoConclusaoGraduacao']; ?>">
@@ -176,19 +281,55 @@ edit();
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Pós-Graduação</h2>
                 </header>
-                <div class="uk-width-1-2@s">
+                <div class="uk-width-1-3@s">
+                  <label class="uk-form-label" for="form-stacked-text">Curso</label>
+                  <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" name="customer['cursoPosGraducao']" value="<?php echo $customer['cursoPosGraducao']; ?>">
+                  </div>
+                </div>
+                <div class="uk-width-1-3@s">
                   <label class="uk-form-label" for="form-stacked-text">Área de Conhecimento</label>
                   <div class="uk-form-controls">
                     <input class="uk-input" id="form-stacked-text" type="text" name="customer['areaConhecimento']" value="<?php echo $customer['areaConhecimento']; ?>">
                   </div>
                 </div>
-                <div class="uk-width-1-2@s">
+                <div class="uk-width-1-3@s">
+                  <label class="uk-form-label" for="form-stacked-text">CR</label>
+                  <div class="uk-form-controls">
+                    <input class="uk-input" id="form-stacked-text" type="text" name="customer['cr']" value="<?php echo $customer['cr']; ?>">
+                  </div>
+                </div>
+                <div class="uk-width-1-3@s">
                   <label class="uk-form-label" for="form-stacked-text">Semestre de Ingresso</label>
                   <div class="uk-form-controls">
                     <input class="uk-input" id="form-stacked-text" type="text" name="customer['semestreIngresso']" value="<?php echo $customer['semestreIngresso']; ?>">
                   </div>
                 </div>
                 <div class="uk-width-1-3@s">
+                  <label class="uk-form-label" for="form-stacked-text">Dedicação</label>
+                  <div class="uk-form-controls">
+                    <select class="uk-select" id="form-stacked-select" name="customer['titulo']" value="">
+                      <?php if($customer['dedicacao'] == 1){ 
+                        echo '<option value="'.$customer['dedicacao'].'">Exclusiva</option>'; 
+                        echo '<option value="2">Parcial</option>'; } 
+                        else{ echo '<option value="'.$customer['dedicacao'].'">Parcial</option>'; 
+                        echo '<option value="1">Exclusiva</option>'; } ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="uk-width-1-3@s">
+                  <div class="uk-form-label">Título</div>
+                  <div class="uk-form-controls">
+                     <select class="uk-select" id="form-stacked-select" name="customer['titulo']" value="">
+                      <?php if($customer['titulo'] == 1){ 
+                        echo '<option value="'.$customer['titulo'].'">Mestrado</option>'; 
+                        echo '<option value="2">Doutorado</option>'; } 
+                        else{ echo '<option value="'.$customer['titulo'].'">Doutorado</option>'; 
+                        echo '<option value="1">Mestrado</option>'; } ?>
+                    </select>
+                  </div>
+                </div>
+                <div class="uk-width-1-2@s">
                   <div class="uk-form-label">Orientador</div>
                   <div class="uk-form-controls">
                     <select class="uk-select" id="form-stacked-select" name="customer['idOrientador']" id="id_instituicao">
@@ -208,7 +349,7 @@ edit();
                   </select>
                   </div>
                 </div>
-                <div class="uk-width-1-3@s">
+                <div class="uk-width-1-2@s">
                   <label class="uk-form-label" for="form-stacked-text">Co-Orientador</label>
                  <div class="uk-form-controls">
                     <select class="uk-select" id="form-stacked-select" name="customer['idCoOrientador']" id="id_instituicao">
@@ -226,18 +367,6 @@ edit();
                     }
                     ?>
                   </select>
-                  </div>
-                </div>
-                <div class="uk-width-1-3@s">
-                  <div class="uk-form-label">Título</div>
-                  <div class="uk-form-controls">
-                     <select class="uk-select" id="form-stacked-select" name="customer['titulo']" value="">
-                      <?php if($customer['titulo'] == 1){ 
-                        echo '<option value="'.$customer['titulo'].'">Mestrado</option>'; 
-                        echo '<option value="2">Doutorado</option>'; } 
-                        else{ echo '<option value="'.$customer['titulo'].'">Doutorado</option>'; 
-                        echo '<option value="1">Mestrado</option>'; } ?>
-                    </select>
                   </div>
                 </div>
                 <div id="actions" class="cadastrar">

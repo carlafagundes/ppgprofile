@@ -94,6 +94,7 @@ add();
                     <label class="uk-form-label" for="form-stacked-text">Estado</label>
                     <div class="uk-form-controls">                              
                       <select class="uk-select" id="form-stacked-select" type="text" name="customer['estado']">
+                        <option value="">Selecione um estado</option>
                         <option value="AC">AC</option>
                         <option value="AL">AL</option>
                         <option value="AP">AP</option>
@@ -132,7 +133,7 @@ add();
                   <header class="panel_header">
                     <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Graduação</h2>
                   </header>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <div class="uk-form-label">Curso</div>
                     <div class="uk-form-controls">
                       <select class="uk-select" id="form-stacked-select" name="customer['idCursoGraduacao']" id="id_instituicao">
@@ -150,7 +151,7 @@ add();
                       </select>
                     </div>
                   </div>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <div class="uk-form-label">Instituição</div>
                     <div class="uk-form-controls">
                       <select class="uk-select" id="form-stacked-select" name="customer['idInstituicao']" id="id_instituicao">
@@ -168,13 +169,13 @@ add();
                       </select>
                     </div>
                   </div>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">CR</label>
                     <div class="uk-form-controls">
                       <input class="uk-input" id="form-stacked-text" type="number" name="customer['crGraduacao']">
                     </div>
                   </div>
-                  <div class="uk-width-1-3@s">
+                  <div class="uk-width-1-2@s">
                     <label class="uk-form-label" for="form-stacked-text">Ano de Conclusão</label>
                     <div class="uk-form-controls">
                       <input class="uk-input" id="form-stacked-text" type="number" name="customer['anoConclusaoGraduacao']">
