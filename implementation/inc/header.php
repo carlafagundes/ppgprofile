@@ -68,7 +68,7 @@ error_reporting(false);// para nao da exit() de erros na tela
                     </ul>
                   </div>
                 </li>
-                <li><a href="<?php echo BASEURL; ?>qualificar/add.php">Qualificar Aluno</a></li>
+                <!-- <li><a href="<?php //echo BASEURL; ?>qualificar/add.php">Qualificar Aluno</a></li> -->
                 <li><a href="<?php echo BASEURL; ?>relatorio/relatorio.php">Relatório</a></li>
               </ul>
             </div>
