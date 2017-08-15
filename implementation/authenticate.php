@@ -19,7 +19,7 @@ if($_POST['txt_perfil']==1)
 		
 	}
 	if(isset($_SESSION['perfil']))// se o login funcionou va  para esta url
-		header("location:../relatorio/relatorio.php");
+		header("location:relatorio/relatorio.php");
 	else
 		header("location:login.php?msg=dados_incorretos");
 	
