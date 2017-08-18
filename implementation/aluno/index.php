@@ -3,7 +3,7 @@ require_once('functions.php');
 index();
 ?>
 <?php include "../inc/header.php"; ?>
-
+<?php include "modal.php"; ?>
 <!-- Seção de Conteúdo -->
 <div class="uk-container">
   <div class="row">
@@ -49,8 +49,7 @@ index();
                       <td class="actions text-right">
                         <a href="view.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file" title="Visualizar"></a>
                         <a href="edit.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file-edit" title="Editar"></a>
-                        <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link" uk-icon="icon: trash" title="Excluir"></a>
-
+                        <a  href="#modal-sections" class="uk-icon-link" uk-icon="icon: trash" title="Excluir" data-customer="<?php echo $customer['id']; ?>" uk-toggle></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>
