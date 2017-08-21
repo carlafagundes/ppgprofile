@@ -22,6 +22,15 @@ error_reporting(false);// para nao da exit() de erros na tela
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="<?php echo BASEURL; ?>js/uikit.min.js"></script>
   <script src="<?php echo BASEURL; ?>js/uikit-icons.min.js"></script>
+  <!-- Mascarar Campos -->
+  <script src="<?php echo BASEURL; ?>js/jquery.mask.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.date').mask('00/00/0000');
+      $('.cpf').mask('000.000.000-00');
+      $('.cep').mask('00000-000');
+    });
+  </script>
   <!-- Título -->
   <title>PPG Profile</title>
 </head>
@@ -78,14 +87,14 @@ error_reporting(false);// para nao da exit() de erros na tela
               <span class="user-name"><?php echo $_SESSION['nome']; ?></span>
               <span class="avatar avatar-online">
                 <div class="logout" uk-icon="icon: user"></div>
-             </span>
-           </a>
-           <div class="logout" uk-icon="icon: sign-out">
-            <a href="<?php echo BASEURL; ?>/logout.php">Logout</a>
+              </span>
+            </a>
+            <div class="logout" uk-icon="icon: sign-out">
+              <a href="<?php echo BASEURL; ?>/logout.php">Logout</a>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   </div>
-</div>
-<main class="uk-container">
+  <main class="uk-container">

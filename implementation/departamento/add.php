@@ -26,15 +26,15 @@
                             <h2 class="title pull-left uk-heading-bullet">Informações do Departamento</h2>
                         </header>
                         <div class="uk-width-1-2@s">
-                          <label class="uk-form-label" for="form-stacked-text">Nome</label>
+                          <label class="uk-form-label required" for="form-stacked-text">Nome</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" required="required" name="customer['nome']">
+                              <input class="uk-input" id="form-stacked-text" type="text" required name="customer['nome']">
                           </div>
                         </div>
                         <div class="uk-width-1-2@s">
-                          <div class="uk-form-label">Instituição</div>
+                          <div class="uk-form-label required">Instituição</div>
                           <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select" name="customer['idInstituicao']" id="id_instituicao">
+                            <select class="uk-select" id="form-stacked-select" required name="customer['idInstituicao']" id="id_instituicao">
                               <option value="">Selecione a instituição</option>
                               <?php 
                                 $sql = "SELECT * FROM instituicao";

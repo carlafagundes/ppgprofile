@@ -26,33 +26,33 @@ add();
                     <h2 class="title pull-left uk-heading-bullet">Informações Pessoais</h2>
                   </header>
                   <div class="uk-width-1-3@s">
-                    <label class="uk-form-label" for="form-stacked-text">Nome</label>
+                    <label class="uk-form-label required" for="form-stacked-text">Nome</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="text" required="required" name="customer['nome']">
+                      <input class="uk-input" id="form-stacked-text" type="text" required name="customer['nome']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
-                    <label class="uk-form-label" for="form-stacked-text">Sobrenome</label>
+                    <label class="uk-form-label required" for="form-stacked-text">Sobrenome</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="text" required="required" name="customer['sobrenome']">
+                      <input class="uk-input" id="form-stacked-text" type="text" required name="customer['sobrenome']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
-                    <label class="uk-form-label" for="form-stacked-text">SIAPE</label>
+                    <label class="uk-form-label required" for="form-stacked-text">SIAPE</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="text" required="required" pattern="[0-9]+$" maxlength="7" name="customer['siape']">
+                      <input class="uk-input" id="form-stacked-text" type="text" required pattern="[0-9]+$" maxlength="7" name="customer['siape']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
-                    <label class="uk-form-label" for="form-stacked-text">Data de Admmissão</label>
+                    <label class="uk-form-label required" for="form-stacked-text">Data de Admmissão</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="date" required="required" maxlength="10" name="customer['dataAdmissao']" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$">
+                      <input class="uk-input date" id="form-stacked-text" type="text" required maxlength="10" name="customer['dataAdmissao']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
-                  <div class="uk-form-label">Instituição</div>
+                  <div class="uk-form-label required">Instituição</div>
                   <div class="uk-form-controls">
-                    <select class="uk-select" id="form-stacked-select" required="required" name="customer['idInstituicao']" id="id_instituicao">
+                    <select class="uk-select" id="form-stacked-select" required name="customer['idInstituicao']" id="id_instituicao">
                       <option value="">Selecione a instituição</option>
                       <?php 
                       $sql = "SELECT * FROM instituicao";
@@ -68,9 +68,9 @@ add();
                   </div>
                 </div>
                   <div class="uk-width-1-3@s">
-                    <label class="uk-form-label" for="form-stacked-select">Departamento</label>
+                    <label class="uk-form-label required" for="form-stacked-select">Departamento</label>
                     <div class="uk-form-controls">
-                     <select class="uk-select" id="form-stacked-select" required="required" name="customer['idDepartamento']" id="id_departamento">
+                     <select class="uk-select" id="form-stacked-select" required name="customer['idDepartamento']" id="id_departamento">
                       <option value="">Selecione um departamento</option>
                       <?php 
                       $sql = "SELECT * FROM departamento";
@@ -89,15 +89,15 @@ add();
                   <h2 class="title pull-left uk-heading-bullet">Dados para Login</h2>
                 </header>
                 <div class="uk-width-1-2@s">
-                  <label class="uk-form-label" for="form-stacked-text">E-mail</label>
+                  <label class="uk-form-label required" for="form-stacked-text">E-mail</label>
                   <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" name="customer['email']">
+                    <input class="uk-input" id="form-stacked-text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" name="customer['email']">
                   </div>
                 </div>
                 <div class="uk-width-1-2@s">
-                  <label class="uk-form-label" for="form-stacked-text">Senha</label>
+                  <label class="uk-form-label required" for="form-stacked-text">Senha</label>
                   <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" required="required"type="password" name="customer['senha']">
+                    <input class="uk-input" id="form-stacked-text" required type="password" name="customer['senha']">
                   </div>
                 </div>
                 <div id="actions" class="cadastrar">
