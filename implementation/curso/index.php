@@ -67,7 +67,7 @@ index();
                       <td class="actions text-right">
                         <a href="view.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file" title="Visualizar"></a>
                         <a href="edit.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link uk-margin-small-right" uk-icon="icon: file-edit" title="Editar"></a>
-                        <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link" uk-icon="icon: trash" title="Excluir"></a>
+                        <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-icon-link" uk-toggle="target: #modal-example" uk-icon="icon: trash" title="Excluir"></a>
                       </td>
                     </tr>
                   <?php endforeach; ?>
@@ -78,6 +78,17 @@ index();
               <?php endif; ?>
             </tbody>
           </table>
+        </div>
+      </div>
+      <!-- Modal de exclusão -->
+      <div id="modal-example" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+          <h2 class="uk-modal-title">Excluir</h2>
+          <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
+          <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-primary" title="Excluir">Excluir</a>
+          </p>
         </div>
       </div>
     </section>
