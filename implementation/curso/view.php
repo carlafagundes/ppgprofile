@@ -63,13 +63,24 @@ view($_GET['id']);
               <header class="panel_header">
                 <h2 class="title pull-left uk-heading-bullet">Ano de Criação: <?php echo $customer['anoCriacao']; ?></h2>
               </header>
-             <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar"><button class="uk-button uk-button-primary">Editar</button></a>
-             <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
-           </div>
-         </section>
-       </div>
-     </div>
-   </div>
- </div>
+              <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar"><button class="uk-button uk-button-primary">Editar</button></a>
+              <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" uk-toggle="target: #modal-example" title="Excluir">Excluir</a>
+            </div>
+            <!-- Modal de exclusão -->
+            <div id="modal-example" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Excluir</h2>
+                <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
+                <p class="uk-text-right">
+                  <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                  <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <?php include "../inc/footer.php";?>

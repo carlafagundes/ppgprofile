@@ -68,7 +68,7 @@ index();
           <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
           <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-primary" title="Excluir">Excluir</a>
+            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
           </p>
         </div>
       </div>

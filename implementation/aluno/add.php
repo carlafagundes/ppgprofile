@@ -49,7 +49,7 @@ add();
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label required" for="form-stacked-text">CPF</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input cpf" id="form-stacked-text" required type="text" name="customer['cpf']">
+                      <input class="uk-input cpf" id="form-stacked-text" type="text" name="customer['cpf']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
@@ -135,12 +135,12 @@ add();
                     <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Graduação</h2>
                   </header>
                   <div class="uk-width-1-2@s">
-                    <label class="uk-form-label required" for="form-stacked-text">Curso</label>
+                    <label class="uk-form-label required" for="form-stacked-text">Instituição</label>
                     <div class="uk-form-controls">
-                      <select class="uk-select" id="form-stacked-select" required name="customer['idCursoGraduacao']" id="id_instituicao">
-                        <option value="">Selecione o curso</option>
+                      <select class="uk-select" id="form-stacked-select" required name="customer['idInstituicao']" id="id_instituicao">
+                        <option value="">Selecione a Instituição</option>
                         <?php 
-                        $sql = "SELECT * FROM curso";
+                        $sql = "SELECT * FROM instituicao";
                         $bd=open_database();
                         $resultado = mysqli_query($bd, $sql);
                         while ($dados = mysqli_fetch_assoc($resultado)){
@@ -153,12 +153,12 @@ add();
                     </div>
                   </div>
                   <div class="uk-width-1-2@s">
-                    <label class="uk-form-label required" for="form-stacked-text">Instituição</label>
+                    <label class="uk-form-label required" for="form-stacked-text">Curso</label>
                     <div class="uk-form-controls">
-                      <select class="uk-select" id="form-stacked-select" required name="customer['idInstituicao']" id="id_instituicao">
-                        <option value="">Selecione a Instituição</option>
+                      <select class="uk-select" id="form-stacked-select" required name="customer['idCursoGraduacao']" id="id_instituicao">
+                        <option value="">Selecione o curso</option>
                         <?php 
-                        $sql = "SELECT * FROM instituicao";
+                        $sql = "SELECT * FROM curso";
                         $bd=open_database();
                         $resultado = mysqli_query($bd, $sql);
                         while ($dados = mysqli_fetch_assoc($resultado)){
@@ -179,7 +179,7 @@ add();
                   <div class="uk-width-1-2@s">
                     <label class="uk-form-label required" for="form-stacked-text">Ano de Conclusão</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="number" min="0" required pattern="[0-9]+$" name="customer['anoConclusaoGraduacao']">
+                      <input class="uk-input" id="form-stacked-text" type="number" min="0" step="0.1" required pattern="[0-9]+$" name="customer['anoConclusaoGraduacao']">
                     </div>
                   </div>
                   <header class="panel_header">
@@ -223,7 +223,7 @@ add();
                     <label class="uk-form-label required" for="form-stacked-text">Título</label>
                     <div class="uk-form-controls">
                       <select class="uk-select" id="form-stacked-select" required name="customer['titulo']">
-                      <option value="0">Selecione um título</option>
+                      <option value="">Selecione um título</option>
                         <option value="1">Mestrado</option>
                         <option value="2">Doutorado</option>
                       </select>

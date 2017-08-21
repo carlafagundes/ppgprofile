@@ -66,10 +66,10 @@ index();
       <div id="modal-example" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
           <h2 class="uk-modal-title">Excluir</h2>
-          <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
+          <p>Tem certeza que deseja excluir "<?php echo $customer['nome'] . " " . $customer['sobrenome']; ?>"</p>
           <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-primary" title="Excluir">Excluir</a>
+            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
           </p>
         </div>
       </div>

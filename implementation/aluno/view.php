@@ -66,7 +66,7 @@ view($_GET['id']);
                   $bd=open_database();
                   $resultado = mysqli_query($bd, $sql);
                   while ($dados = mysqli_fetch_assoc($resultado)){
-                    
+
                     echo $dados['nome'];
                   }
 
@@ -78,7 +78,7 @@ view($_GET['id']);
                   $bd=open_database();
                   $resultado = mysqli_query($bd, $sql);
                   while ($dados = mysqli_fetch_assoc($resultado)){
-                    
+
                     echo $dados['nome'];
                   }
 
@@ -106,7 +106,7 @@ view($_GET['id']);
                   <h2 class="title pull-left uk-heading-bullet">Dedicação: <?php echo ($customer['dedicacao'] == 1) ? "Exclusiva" : "Parcial" ?></h2>
                 </header>
                 <header class="panel_header">
-                  <h2 class="title pull-left uk-heading-bullet">Título: <?php echo ($customer['genero'] == 1) ? "Mestrador" : "Doutorado" ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Título: <?php echo ($customer['titulo'] == 1) ? "Mestrado" : "Doutorado" ?></h2>
                 </header>
                 <header class="panel_header">
                  <h2 class="title pull-left uk-heading-bullet">Orientador: <?php $idDaInstituicao = $customer['idOrientador']; 
@@ -114,7 +114,7 @@ view($_GET['id']);
                   $bd=open_database();
                   $resultado = mysqli_query($bd, $sql);
                   while ($dados = mysqli_fetch_assoc($resultado)){
-                    
+
                     echo $dados['nome'];
                   }
 
@@ -126,7 +126,7 @@ view($_GET['id']);
                   $bd=open_database();
                   $resultado = mysqli_query($bd, $sql);
                   while ($dados = mysqli_fetch_assoc($resultado)){
-                    
+
                     echo $dados['nome'];
                   }
 
@@ -135,7 +135,18 @@ view($_GET['id']);
                 <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar">
                   <button class="uk-button uk-button-primary">Editar</button>
                 </a>
-                <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
+                <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" uk-toggle="target: #modal-example" title="Excluir">Excluir</a>
+              </div>
+            </div>
+            <!-- Modal de exclusão -->
+            <div id="modal-example" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Excluir</h2>
+                <p>Tem certeza que deseja excluir "<?php echo $customer['nome'] . " " . $customer['sobrenome']; ?>"</p>
+                <p class="uk-text-right">
+                  <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
+                  <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
+                </p>
               </div>
             </div>
           </section>
