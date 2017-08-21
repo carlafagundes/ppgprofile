@@ -27,13 +27,13 @@
                         <div class="uk-width-1-2@s">
                           <label class="uk-form-label" for="form-stacked-text">Nome</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['nome']">
+                              <input class="uk-input" id="form-stacked-text" type="text" required="required" name="customer['nome']">
                           </div>
                         </div>
                         <div class="uk-width-1-2@s">
                           <div class="uk-form-label">Tipo</div>
                           <div class="uk-form-controls">
-                            <select class="uk-select" id="form-stacked-select" name="customer['tipo']">
+                            <select class="uk-select" id="form-stacked-select" required="required" name="customer['tipo']">
                               <option value="0">Selecione o tipo da instituição</option>
                               <option value="1">Pública</option>
                               <option value="2">Privada</option>
