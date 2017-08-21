@@ -49,7 +49,7 @@ add();
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label required" for="form-stacked-text">CPF</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input cpf" id="form-stacked-text" required maxlength="11" type="text" name="customer['cpf']">
+                      <input class="uk-input cpf" id="form-stacked-text" required type="text" name="customer['cpf']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
@@ -206,7 +206,7 @@ add();
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label required" for="form-stacked-text">Semestre de Ingresso</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input" id="form-stacked-text" type="number" min="0" required pattern="[0-9]+$" name="customer['semestreIngresso']">
+                      <input class="uk-input" id="form-stacked-text" type="number" min="0" step="0.1" required pattern="[0-9]+$" name="customer['semestreIngresso']">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">

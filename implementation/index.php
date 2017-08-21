@@ -31,10 +31,10 @@ if (!isset($_SESSION['id']) || $_SESSION['perfil']!=2)
             <div class="content-body">
               <div class="row">
                 <header class="panel_header">
-                <a href="<?php echo BASEURL; ?>departamento"><h2 class="title pull-left uk-heading-bullet">Lista de Departamentos</h2></a>
+                  <a href="<?php echo BASEURL; ?>instituicao"><h2 class="title pull-left uk-heading-bullet">Lista de Instituições</h2></a>
                 </header>
                 <header class="panel_header">
-                  <a href="<?php echo BASEURL; ?>instituicao"><h2 class="title pull-left uk-heading-bullet">Lista de Instituições</h2></a>
+                  <a href="<?php echo BASEURL; ?>departamento"><h2 class="title pull-left uk-heading-bullet">Lista de Departamentos</h2></a>
                 </header>
                 <header class="panel_header">
                   <a href="<?php echo BASEURL; ?>curso"><h2 class="title pull-left uk-heading-bullet">Lista de Cursos</h2></a>
