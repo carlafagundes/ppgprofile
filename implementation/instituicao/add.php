@@ -27,7 +27,7 @@
                         <div class="uk-width-1-2@s">
                           <label class="uk-form-label required" for="form-stacked-text">Nome</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" required name="customer['nome']">
+                              <input class="uk-input" id="nome-instituicao" type="text" required name="customer['nome']">
                           </div>
                         </div>
                         <div class="uk-width-1-2@s">

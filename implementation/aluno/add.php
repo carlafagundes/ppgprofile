@@ -3,6 +3,7 @@ require_once('functions.php');
 add();
 ?>
 <?php include "../inc/header.php";?>
+<script src="../js/script.js"></script>
 <!-- Seção de Conteúdo -->
 <div class="uk-container">
   <div class="row">
@@ -156,17 +157,7 @@ add();
                     <label class="uk-form-label required" for="form-stacked-text">Curso</label>
                     <div class="uk-form-controls">
                       <select class="uk-select" id="form-stacked-select" required name="customer['idCursoGraduacao']" id="id_instituicao">
-                        <option value="">Selecione o curso</option>
-                        <?php 
-                        $sql = "SELECT * FROM curso";
-                        $bd=open_database();
-                        $resultado = mysqli_query($bd, $sql);
-                        while ($dados = mysqli_fetch_assoc($resultado)){
-                          $id = $dados['id'];
-                          $nome = $dados['nome'];
-                          echo "<option value='$id'>$nome</option>";
-                        }
-                        ?>
+                       
                       </select>
                     </div>
                   </div>
