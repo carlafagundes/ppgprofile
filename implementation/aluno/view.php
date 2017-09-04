@@ -121,16 +121,16 @@ view($_GET['id']);
                   ?></h2>
                 </header>
                 <header class="panel_header">
-                 <h2 class="title pull-left uk-heading-bullet">Co-Orientador: <?php $idDaInstituicao = $customer['idCoOrientador']; 
-                  $sql = "SELECT nome FROM professor where id=".$customer['idOrientador'];
-                  $bd=open_database();
-                  $resultado = mysqli_query($bd, $sql);
-                  while ($dados = mysqli_fetch_assoc($resultado)){
-
-                    echo $dados['nome'];
-                  }
-
-                  ?></h2>
+                  <h2 class="title pull-left uk-heading-bullet">Co-Orientador: <?php echo $customer['coOrientador']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Data da Defesa: <?php echo $customer['dataDefesa']; ?></h2>
+                </header>
+                <header class="panel_header">
+                  <h2 class="title pull-left uk-heading-bullet">Aprovação: <?php echo ($customer['aprovacao'] == 1) ? "Aprovado" : "Reprovado" ?></h2>
+                </header>
+                <header class="panel_header">
+                <h2 class="title pull-left uk-heading-bullet">Nota: <?php echo $customer['nota']; ?></h2>
                 </header>
                 <a href="edit.php?id=<?php echo $customer['id']; ?>" title="Editar">
                   <button class="uk-button uk-button-primary">Editar</button>

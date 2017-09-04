@@ -214,3 +214,11 @@ input:invalid + .aviso:after{
         font: bold normal 1em sans-serif;
         left: 190px;
     }
+
+  span.asterisco {
+    color: red;
+}
+
+.requerido{
+  padding: 0 0 20px 0;
+}

@@ -25,22 +25,13 @@
                         <h2 class="title pull-left uk-heading-bullet">Informações do Aluno</h2>
                     </header>
                       <form action="add.php" method="post" class="uk-grid-small" uk-grid>
-                        <div class="uk-width-1-3@s">
-                          <label class="uk-form-label" for="form-stacked-text">Pesquisar por Matrícula</label>
+                        <div class="uk-width-1-2@s">
+                          <label class="uk-form-label" for="form-stacked-text">CPF</label>
                           <div class="uk-form-controls">
-                              <input class="uk-input" id="form-stacked-text" type="text" name="customer['']">
+                              <input class="uk-input cpf" id="form-stacked-text" type="text" name="customer['']" placeholder="Digite o cpf do aluno que deseja pesquisar">
                           </div>
                         </div>
-                        <div class="uk-width-1-3@s">
-                          <div class="uk-form-label">Pesquisar Aluno</div>
-                          <div class="uk-form-controls">
-                              <select class="uk-select" id="form-stacked-select" name="customer['']">
-                                  <option>Aluno 1</option>
-                                  <option>Aluno 2</option>
-                              </select>
-                          </div>
-                        </div>
-                        <div class="uk-width-1-3@s">
+                        <div class="uk-width-1-2@s">
                           <label class="uk-form-label" for="form-stacked-text">Orientador</label>
                           <div class="uk-form-controls">
                               <input class="uk-input" id="form-stacked-text" disabled type="text" name="customer['']">

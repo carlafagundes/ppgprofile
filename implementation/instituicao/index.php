@@ -3,7 +3,6 @@ require_once('functions.php');
 index();
 ?>
 <?php include "../inc/header.php"; ?>
-<?php include "modal.php"; ?>
 
 <!-- Seção de Conteúdo -->
 <div class="uk-container">
@@ -58,6 +57,7 @@ index();
                 </tr>
               <?php endif; ?>
             </tbody>
+
           </table>
         </div>
       </div>
@@ -68,10 +68,17 @@ index();
           <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
           <p class="uk-text-right">
             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-            <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
+            <a href="delete.php?id=<?php echo $customer['id']; ?>">
+            <button id="instituicao-excluir-sucesso" class="uk-button uk-button-danger" title="Excluir" data-message="<span uk-icon='icon: check'></span> Dados excluídos com sucesso!" data-status="success">Excluir</button>
+            </a>
           </p>
         </div>
       </div>
+      <script>
+        jQuery('#instituicao-excluir-sucesso').on('click', function() {
+          UIkit.notification($(this).data());
+        });
+      </script>
     </section>
   </div>
 </div>

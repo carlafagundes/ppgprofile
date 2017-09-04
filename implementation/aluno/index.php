@@ -3,7 +3,6 @@ require_once('functions.php');
 index();
 ?>
 <?php include "../inc/header.php"; ?>
-<?php include "modal.php"; ?>
 <!-- Seção de Conteúdo -->
 <div class="uk-container">
   <div class="row">

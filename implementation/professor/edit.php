@@ -37,7 +37,7 @@ edit();
                 <div class="uk-width-1-3@s">
                   <label class="uk-form-label" for="form-stacked-text">SIAPE</label>
                   <div class="uk-form-controls">
-                    <input class="uk-input" id="form-stacked-text" type="text" name="customer['siape']" value="<?php echo $customer['siape']; ?>">
+                    <input class="uk-input" id="form-stacked-text" type="text" pattern="[0-9]+$" maxlength="7" name="customer['siape']" value="<?php echo $customer['siape']; ?>">
                   </div>
                 </div>
                 <div class="uk-width-1-3@s">

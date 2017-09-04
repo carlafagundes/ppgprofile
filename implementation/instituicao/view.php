@@ -34,20 +34,28 @@ view($_GET['id']);
                <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" uk-toggle="target: #modal-example" title="Excluir">Excluir</a>
              </div>
              <!-- Modal de exclusão -->
-            <div id="modal-example" uk-modal>
+             <div id="modal-example" uk-modal>
               <div class="uk-modal-dialog uk-modal-body">
                 <h2 class="uk-modal-title">Excluir</h2>
                 <p>Tem certeza que deseja excluir "<?php echo $customer['nome']; ?>"</p>
                 <p class="uk-text-right">
                   <button class="uk-button uk-button-default uk-modal-close" type="button">Cancelar</button>
-                  <a href="delete.php?id=<?php echo $customer['id']; ?>" class="uk-button uk-button-danger" title="Excluir">Excluir</a>
+                  <a href="delete.php?id=<?php echo $customer['id']; ?>">
+                    <button id="instituicao-excluir-sucesso" class="uk-button uk-button-danger" title="Excluir" data-message="<span uk-icon='icon: check'></span> Dados excluídos com sucesso!" data-status="success">Excluir</button>
+                  </a>
                 </p>
               </div>
+              <script>
+              jQuery('#instituicao-excluir-sucesso').on('click', function() {
+                UIkit.notification($(this).data());
+              });
+            </script>
             </div>
-           </section>
-         </div>
-       </div>
-     </div>
-   </div>
- </div>
- <?php include "../inc/footer.php";?>
+            
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<?php include "../inc/footer.php";?>

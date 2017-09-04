@@ -20,6 +20,9 @@ add();
           <section class="box ">
             <div class="content-body">
               <div class="row">
+                <div class="requerido">
+                  <span class="asterisco">*</span> Campos Obrigatórios
+                </div>
                 <header class="panel_header">
                   <h2 class="title pull-left uk-heading-bullet">Informações Pessoais</h2>
                 </header>
@@ -56,7 +59,7 @@ add();
                   <div class="uk-width-1-3@s">
                     <label class="uk-form-label required" for="form-stacked-text">Data de Nascimento</label>
                     <div class="uk-form-controls">
-                      <input class="uk-input date" id="form-stacked-text" required maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" type="text" name="customer['dataNascimento']">
+                      <input class="uk-input date" id="form-stacked-text" required maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" type="text" name="customer['dataNascimento']" placeholder="dd/mm/aaaa">
                     </div>
                   </div>
                   <div class="uk-width-1-3@s">
@@ -239,24 +242,36 @@ add();
                     </div>
                   </div>
                   <div class="uk-width-1-2@s">
-                    <div class="uk-form-label">Co-Orientador</div>
+                    <label class="uk-form-label required" for="form-stacked-text">Co-Orientador</label>
                     <div class="uk-form-controls">
-                      <select class="uk-select" id="form-stacked-select" name="customer['idCoOrientador']" id="id_instituicao">
-                        <option value="">Selecione o co-orientador</option>
-                        <?php 
-                        $sql = "SELECT * FROM professor";
-                        $bd=open_database();
-                        $resultado = mysqli_query($bd, $sql);
-                        while ($dados = mysqli_fetch_assoc($resultado)){
-                          $id = $dados['id'];
-                          $nome = $dados['nome'];
-                          echo "<option value='$id'>$nome</option>";
-                        }
-                        ?>
+                      <input class="uk-input" id="form-stacked-text" type="text" name="customer['coOrientador']">
+                    </div>
+                  </div>
+                  <header class="panel_header">
+                    <h2 class="title pull-left uk-heading-bullet">Informações Sobre a Defesa</h2>
+                  </header>
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Data da Defesa</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input date" id="form-stacked-text" maxlength="10" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$" type="text" name="customer['dataDefesa']" placeholder="dd/mm/aaaa">
+                    </div>
+                  </div>
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Aprovação</label>
+                    <div class="uk-form-controls">
+                      <select class="uk-select" id="form-stacked-select" name="customer['aprovacao']">
+                      <option value="">Selecione a aprovação</option>
+                        <option value="1">Aprovado</option>
+                        <option value="2">Reprovado</option>
                       </select>
                     </div>
                   </div>
-                  
+                  <div class="uk-width-1-3@s">
+                    <label class="uk-form-label" for="form-stacked-text">Nota</label>
+                    <div class="uk-form-controls">
+                      <input class="uk-input" id="form-stacked-text" title="Preencha o campo com um valor entre 0 e 5" pattern="[0-9]+$" min="0" max="5" type="number" name="customer['nota']">
+                    </div>
+                  </div>
                   <div id="actions" class="cadastrar">
                     <button type="submit" class="uk-button uk-button-primary">Cadastrar</button>
                     <a href="index.php" class="uk-button uk-button-danger">Cancelar</a>
